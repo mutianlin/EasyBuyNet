@@ -24,7 +24,7 @@ public class UserServlet extends HttpServlet {
 		String type = request.getParameter("type");
 		if ("register".equals(type)) {
 			
-			us.login(account, password);
+//			us.login(account, password);
 		}
 	}
 
