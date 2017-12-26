@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-26 09:05:48
+Date: 2017-12-26 11:46:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `admin` (
   `password` varchar(12) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='管理员信息';
 
 -- ----------------------------
 -- Records of admin
@@ -39,7 +39,7 @@ CREATE TABLE `bigclass` (
   `b_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `b_name` varchar(20) NOT NULL COMMENT '大分类名称',
   PRIMARY KEY (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='大分类';
 
 -- ----------------------------
 -- Records of bigclass
@@ -50,7 +50,7 @@ CREATE TABLE `bigclass` (
 -- ----------------------------
 DROP TABLE IF EXISTS `buycar`;
 CREATE TABLE `buycar` (
-  `c_id` int(11) NOT NULL,
+  `c_id` int(11) NOT NULL AUTO_INCREMENT,
   `u_id` int(11) NOT NULL COMMENT '用户id',
   `c_name` varchar(20) DEFAULT NULL COMMENT '所购商品名称',
   `c_price` double(11,0) DEFAULT NULL COMMENT '所购商品价格',
@@ -60,7 +60,7 @@ CREATE TABLE `buycar` (
   PRIMARY KEY (`c_id`),
   KEY `u_id` (`u_id`),
   CONSTRAINT `buycar_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of buycar
@@ -91,7 +91,7 @@ CREATE TABLE `goods` (
   KEY `gs_id` (`gs_id`),
   CONSTRAINT `goods_ibfk_2` FOREIGN KEY (`gs_id`) REFERENCES `smallclass` (`s_id`),
   CONSTRAINT `goods_ibfk_1` FOREIGN KEY (`gb_id`) REFERENCES `bigclass` (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品';
 
 -- ----------------------------
 -- Records of goods
@@ -117,7 +117,7 @@ CREATE TABLE `indent` (
   KEY `ig_id` (`ig_id`),
   CONSTRAINT `indent_ibfk_2` FOREIGN KEY (`ig_id`) REFERENCES `goods` (`g_id`),
   CONSTRAINT `indent_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单';
 
 -- ----------------------------
 -- Records of indent
@@ -132,7 +132,7 @@ CREATE TABLE `notice` (
   `n_title` varchar(50) NOT NULL,
   `n_desc` text NOT NULL,
   PRIMARY KEY (`n_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='公告';
 
 -- ----------------------------
 -- Records of notice
@@ -149,7 +149,7 @@ CREATE TABLE `smallclass` (
   PRIMARY KEY (`s_id`),
   KEY `sb_id` (`sb_id`),
   CONSTRAINT `smallclass_ibfk_1` FOREIGN KEY (`sb_id`) REFERENCES `bigclass` (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='小分类';
 
 -- ----------------------------
 -- Records of smallclass
@@ -173,7 +173,7 @@ CREATE TABLE `user` (
   `likes` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of user
