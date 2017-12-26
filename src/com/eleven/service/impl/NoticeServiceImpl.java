@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class NoticeServiceImpl implements com.eleven.dao.NoticeDao {
+import com.eleven.service.NoticeService;
+
+public class NoticeServiceImpl implements NoticeService {
 
 }

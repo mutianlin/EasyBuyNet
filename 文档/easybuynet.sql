@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-25 15:38:37
+Date: 2017-12-26 09:05:48
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,7 +23,8 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `account` varchar(12) NOT NULL COMMENT '登录名',
   `password` varchar(12) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `account` (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -170,7 +171,8 @@ CREATE TABLE `user` (
   `phone` varchar(11) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `likes` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `account` (`account`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

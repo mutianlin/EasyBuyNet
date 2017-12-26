@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class GoodsServiceImpl implements com.eleven.dao.GoodsDao {
+import com.eleven.service.GoodsService;
+
+public class GoodsServiceImpl implements GoodsService {
 
 }

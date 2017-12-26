@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class AdminServiceImpl implements com.eleven.dao.AdminDao {
+import com.eleven.service.AdminService;
+
+public class AdminServiceImpl implements AdminService {
 
 }

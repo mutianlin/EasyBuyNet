@@ -60,7 +60,8 @@
 				<li class="current"><em></em>填写注册信息</li>
 				<li class="last"><em></em>注册成功</li>
 			</ul>
-			<form id="regForm" method="post" action="reg-result.jsp" onsubmit="return checkForm(this);">
+			<form id="regForm" method="post" action="userServlet" onsubmit="return checkForm(this);">
+			<input type="hidden" name="type" value="register"/>
 				<table>
 					<tr>
 						<td class="field">用户名：</td>

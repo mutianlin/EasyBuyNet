@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class SmallclassServiceImpl implements com.eleven.dao.SmallclassDao {
+import com.eleven.service.SmallclassService;
+
+public class SmallclassServiceImpl implements SmallclassService {
 
 }

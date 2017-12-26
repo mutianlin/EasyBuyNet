@@ -1,5 +1,9 @@
 package com.eleven.service;
 
-public interface UserService {
+import com.eleven.entity.User;
 
+public interface UserService {
+	public User login(String account, String password);
+
+	public boolean register(User user);
 }

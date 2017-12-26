@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class BigclassServiceImpl implements com.eleven.dao.BigclassDao{
+import com.eleven.service.BigclassService;
+
+public class BigclassServiceImpl implements BigclassService{
 
 }

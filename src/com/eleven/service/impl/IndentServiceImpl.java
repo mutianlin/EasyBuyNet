@@ -1,5 +1,7 @@
 package com.eleven.service.impl;
 
-public class IndentServiceImpl implements com.eleven.dao.IndentDao {
+import com.eleven.service.IndentService;
+
+public class IndentServiceImpl implements IndentService {
 
 }

@@ -3,12 +3,11 @@ package com.eleven.util;
 //import java.lang.reflect.Field;
 //import java.lang.reflect.Method;
 import java.sql.*;
-//import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+//import javax.naming.Context;
+//import javax.naming.InitialContext;
+//import javax.sql.DataSource;
 
 public class DbUtil {
 	private static Connection conn = null;
@@ -16,20 +15,20 @@ public class DbUtil {
 	private static ResultSet rs = null;
 
 	// 普通jdbc
-	// private static final String driver = "com.mysql.jdbc.Driver";
-	// private static final String url = "jdbc:mysql://localhost:3306/bbs";
-	// private static final String username = "root";
-	// private static final String password = "root";
+	 private static final String driver = "com.mysql.jdbc.Driver";
+	 private static final String url = "jdbc:mysql://localhost:3306/easybuynet";
+	 private static final String username = "root";
+	 private static final String password = "root";
 
 	public static Connection getConnection() {
 		try {
 			// 连接池
-			Context ct = new InitialContext();
-			DataSource ds = (DataSource) ct.lookup("java:comp/env/jdbc/easybuynet");
-			conn = ds.getConnection();
+//			Context ct = new InitialContext();
+//			DataSource ds = (DataSource) ct.lookup("java:comp/env/jdbc/easybuynet");
+//			conn = ds.getConnection();
 			// 普通jdbc
-			// Class.forName(driver);
-			// conn = DriverManager.getConnection(url, username, password);
+			 Class.forName(driver);
+			 conn = DriverManager.getConnection(url, username, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

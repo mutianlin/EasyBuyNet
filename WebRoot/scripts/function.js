@@ -48,7 +48,7 @@ function CheckItem(obj)
 			if(obj.value == "") {
 				msgBox.innerHTML = "验证码不能为空";
 				msgBox.className = "error";
-				return false;
+				//return false;
 			}
 			break;
 	}
@@ -59,9 +59,9 @@ function checkForm(frm)
 {
 	var els = frm.getElementsByTagName("input");
 	for(var i=0; i<els.length; i++) {
-		if(typeof(els[i].getAttribute("onblur")) == "function") {
+		//if(typeof(els[i].getAttribute("onblur")) == "function") {
 			if(!CheckItem(els[i])) return false;
-		}
+		//}
 	}
 	return true;
 }
@@ -86,7 +86,7 @@ function showChater()
 
 function openRoom()
 {
-	window.open("chat-room.html","chater","status=0,scrollbars=0,menubar=0,location=0,width=600,height=400");
+	window.open("chat-room.jsp","chater","status=0,scrollbars=0,menubar=0,location=0,width=600,height=400");
 }
 
 function scrollChater()
