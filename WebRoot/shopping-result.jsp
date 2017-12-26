@@ -17,7 +17,7 @@
 <body>
 <div id="header" class="wrap">
 	<div id="logo"><img src="images/logo.gif" /></div>
-	<div class="help"><a href="#" class="shopping">购物车</a><a href="login.html">登录</a><a href="register.html">注册</a><a href="guestbook.html">留言</a></div>
+	<div class="help"><a href="#" class="shopping">购物车</a><a href="login.jsp">登录</a><a href="register.jsp">注册</a><a href="guestbook.jsp">留言</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
 			<li class="current"><a href="#">首页</a></li>
@@ -51,7 +51,7 @@
 	</div>
 </div>
 <div id="position" class="wrap">
-	您现在的位置：<a href="index.html">易买网</a> &gt; 购物车
+	您现在的位置：<a href="index.jsp">易买网</a> &gt; 购物车
 </div>
 <div class="wrap">
 	<div id="shopping">
@@ -63,7 +63,7 @@
 					<p>恭喜：购买成功！</p>
 					<p>正在进入首页...</p>
 					<script type="text/javascript">
-						setTimeout("location.href='index.html'", 3000);
+						setTimeout("location.href='index.jsp'", 3000);
 					</script>
 				</div>
 			</div>
