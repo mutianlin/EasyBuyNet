@@ -17,6 +17,7 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		list.add(account);
 		list.add(password);
 		List<User> l = value(DbUtil.executeQuery(sql, list));
+		System.out.println("登录 in userdao");
 		if(l.size()==1){
 			return l.get(0);
 		}else{
@@ -31,7 +32,7 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		List<Object> list = new ArrayList<Object>();
 		list.add(user.getAccount());
 		list.add(user.getPassword());
-		System.out.println("注册");
+		System.out.println("注册 in userdao");
 		return DbUtil.executeUpdate(sql, list);
 	}
 
