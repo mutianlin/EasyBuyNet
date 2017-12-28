@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-26 11:46:02
+Date: 2017-12-28 11:54:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,11 +39,15 @@ CREATE TABLE `bigclass` (
   `b_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `b_name` varchar(20) NOT NULL COMMENT '大分类名称',
   PRIMARY KEY (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='大分类';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='大分类';
 
 -- ----------------------------
 -- Records of bigclass
 -- ----------------------------
+INSERT INTO `bigclass` VALUES ('1', '1');
+INSERT INTO `bigclass` VALUES ('2', '2');
+INSERT INTO `bigclass` VALUES ('3', '3');
+INSERT INTO `bigclass` VALUES ('4', '4');
 
 -- ----------------------------
 -- Table structure for `buycar`
@@ -149,11 +153,19 @@ CREATE TABLE `smallclass` (
   PRIMARY KEY (`s_id`),
   KEY `sb_id` (`sb_id`),
   CONSTRAINT `smallclass_ibfk_1` FOREIGN KEY (`sb_id`) REFERENCES `bigclass` (`b_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='小分类';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='小分类';
 
 -- ----------------------------
 -- Records of smallclass
 -- ----------------------------
+INSERT INTO `smallclass` VALUES ('2', '1.1', '1');
+INSERT INTO `smallclass` VALUES ('3', '1.2', '1');
+INSERT INTO `smallclass` VALUES ('4', '2.1', '2');
+INSERT INTO `smallclass` VALUES ('5', '2.2', '2');
+INSERT INTO `smallclass` VALUES ('6', '3.1', '3');
+INSERT INTO `smallclass` VALUES ('7', '3.2', '3');
+INSERT INTO `smallclass` VALUES ('9', '4.1', '4');
+INSERT INTO `smallclass` VALUES ('11', '4.2', '4');
 
 -- ----------------------------
 -- Table structure for `user`
@@ -173,8 +185,22 @@ CREATE TABLE `user` (
   `likes` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=1446 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('7', '阿萨德', 'asd', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('8', '123', '123', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1030', '23', '23', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1033', '1234', '1234', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1035', '12345', '12345', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1036', '123456', '123456', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1157', '111', '111', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1254', '1111', '1111', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1393', '21', '21', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1433', '去', 'q', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1434', '1', '1', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1435', '我', 'w', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1436', '22', '22', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1440', '123123', '123', '', '', null, null, null, null, null, null);

@@ -30,7 +30,7 @@ public class DbUtil {
 			 Class.forName(driver);
 			 conn = DriverManager.getConnection(url, username, password);
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return conn;
 	}
@@ -43,7 +43,7 @@ public class DbUtil {
 			}
 			rs = pst.executeQuery();
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return rs;
 	}
@@ -57,7 +57,7 @@ public class DbUtil {
 			}
 			num = pst.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			closeAll();
 		}
@@ -69,7 +69,7 @@ public class DbUtil {
 			try {
 				rs.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 
@@ -77,7 +77,7 @@ public class DbUtil {
 			try {
 				pst.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 
@@ -85,7 +85,7 @@ public class DbUtil {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 

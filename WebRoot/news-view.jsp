@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common.jsp"%>
+<%@ include file="common/common.jsp"%>
 <body>
-	<%@ include file="head.jsp"%>
+	<%@ include file="common/head.jsp"%>
 	<div id="position" class="wrap">
 		您现在的位置：<a href="index.jsp">易买网</a> &gt; 阅读新闻
 	</div>

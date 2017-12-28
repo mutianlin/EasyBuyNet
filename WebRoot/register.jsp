@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common.jsp"%>
+<%@ include file="common/common.jsp"%>
 <body>
-	<%@ include file="head.jsp"%>
+	<%@ include file="common/head.jsp"%>
 	<div id="register" class="wrap">
 		<div class="shadow">
 			<em class="corner lb"></em> <em class="corner rt"></em>
@@ -15,6 +15,7 @@
 					onsubmit="return checkForm(this);">
 					<input type="hidden" name="type" value="register" />
 					<table>
+					<tr style="color: red;" ><td>${err}</td></tr>
 						<tr>
 							<td class="field">用户名：</td>
 							<td><input class="text" type="text" name="userName"

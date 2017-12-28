@@ -36,20 +36,33 @@ public class Servlet extends HttpServlet {
 			String account = request.getParameter("userName");
 			String password = request.getParameter("passWord");
 			User user = us.login(account, password);
-			user.setPassword(null);
-			session.setAttribute("user", user);
-			request.getRequestDispatcher("reg-result.jsp").forward(request, response);
+			if(user == null){
+				request.setAttribute("err", "用户名或密码不正确");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}else{
+				user.setPassword(null);
+				session.setAttribute("user", user);
+				request.getRequestDispatcher("reg-result.jsp").forward(request, response);
+			}
 		}else if("register".equals(type)){
 			User user = new User();
 			user.setAccount(request.getParameter("userName"));
 			user.setPassword(request.getParameter("passWord"));
-			us.register(user);
-			request.getRequestDispatcher("reg-result.jsp").forward(request, response);
+			if(us.register(user)){
+				request.getRequestDispatcher("reg-result.jsp").forward(request, response);
+			}else{
+				request.setAttribute("err", "用户名已存在");
+				request.getRequestDispatcher("register.jsp").forward(request, response);
+			}
+			
 		}else if("indexClass".equals(type)){
 			SmallclassService smallclassService = new SmallclassServiceImpl();
 			BigclassService bigclassService = new BigclassServiceImpl();
 			session.setAttribute("blist", bigclassService.selectAll());
 			session.setAttribute("slist", smallclassService.selectAll());
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}else if("logout".equals(type)){
+			session.removeAttribute("user");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

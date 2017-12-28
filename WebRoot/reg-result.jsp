@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common.jsp" %>
+<%@ include file="common/common.jsp" %>
 <body>
-<%@ include file="head.jsp" %>
+<%@ include file="common/head.jsp" %>
 <div id="register" class="wrap">
 	<div class="shadow">
 		<em class="corner lb"></em>

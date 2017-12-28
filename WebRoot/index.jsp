@@ -1,7 +1,7 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common.jsp"%>
+<%@ include file="common/common.jsp"%>
 <body>
-	<%@ include file="head.jsp"%>
+	<%@ include file="common/head.jsp"%>
 
 	<c:if test="${empty blist}">
 		<%
@@ -15,7 +15,7 @@
 			<div class="box">
 				<h2>商品分类</h2>
 				<dl>
-					<%@ include file="Navigation.jsp"%>
+					<%@ include file="common/Navigation.jsp"%>
 				</dl>
 			</div>
 			<div class="spacer"></div>

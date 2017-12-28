@@ -56,7 +56,7 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 				list.add(u);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return list;
 	}
