@@ -16,7 +16,7 @@ public class DbUtil {
 
 	// 普通jdbc
 	 private static final String driver = "com.mysql.jdbc.Driver";
-	 private static final String url = "jdbc:mysql://localhost:3306/easybuynet";
+	 private static final String url = "jdbc:mysql://localhost:3306/easybuynet?characterEncoding=utf8&useSSL=true";
 	 private static final String username = "root";
 	 private static final String password = "root";
 
