@@ -15,7 +15,6 @@ import com.eleven.service.UserService;
 import com.eleven.service.impl.BigclassServiceImpl;
 import com.eleven.service.impl.SmallclassServiceImpl;
 import com.eleven.service.impl.UserServiceImpl;
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 public class Servlet extends HttpServlet {
 
@@ -26,16 +25,16 @@ public class Servlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");//编码统一
 		response.setCharacterEncoding("UTF-8");
 		UserService us = new UserServiceImpl();
 		String type = request.getParameter("type");
-		System.out.println("type="+type);
+		System.out.println("\ntype="+type);//测试
 		HttpSession session = request.getSession();
-		if ("login".equals(type)) {
+		if ("login".equals(type)) {//登录
 			String account = request.getParameter("userName");
 			String password = request.getParameter("passWord");
-			User user = us.login(account, password);
+			User user = us.login(account, password);//若成功返回该对象,若失败返回null
 			if(user == null){
 				request.setAttribute("err", "用户名或密码不正确");
 				request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -44,24 +43,24 @@ public class Servlet extends HttpServlet {
 				session.setAttribute("user", user);
 				request.getRequestDispatcher("reg-result.jsp").forward(request, response);
 			}
-		}else if("register".equals(type)){
+		}else if("register".equals(type)){//注册
 			User user = new User();
 			user.setAccount(request.getParameter("userName"));
 			user.setPassword(request.getParameter("passWord"));
-			if(us.register(user)){
+			if(us.register(user)){//方法返回是否注册成功
 				request.getRequestDispatcher("reg-result.jsp").forward(request, response);
 			}else{
 				request.setAttribute("err", "用户名已存在");
 				request.getRequestDispatcher("register.jsp").forward(request, response);
 			}
 			
-		}else if("indexClass".equals(type)){
+		}else if("indexClass".equals(type)){//index.jsp显示列表
 			SmallclassService smallclassService = new SmallclassServiceImpl();
 			BigclassService bigclassService = new BigclassServiceImpl();
-			session.setAttribute("blist", bigclassService.selectAll());
-			session.setAttribute("slist", smallclassService.selectAll());
-			request.getRequestDispatcher("index.jsp").forward(request, response);
-		}else if("logout".equals(type)){
+			session.setAttribute("blist", bigclassService.selectAll());//大分类存入会话
+			session.setAttribute("slist", smallclassService.selectAll());//小分类存入会话
+			response.sendRedirect("index.jsp");
+		}else if("logout".equals(type)){//登出
 			session.removeAttribute("user");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

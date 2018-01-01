@@ -1,8 +1,7 @@
 package com.eleven.dao;
 
+import java.sql.ResultSet;
 import java.util.List;
-
-import javax.resource.cci.ResultSet;
 
 import com.eleven.entity.Goods;
 

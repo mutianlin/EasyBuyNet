@@ -15,7 +15,7 @@
 			</c:when>
 			<c:otherwise>
 				<a href="#">${user.getAccount()}</a>
-				<a href="servlet?logout">登出</a>
+				<a href="servlet?type=logout">登出</a>
 			</c:otherwise>
 		</c:choose>
 
