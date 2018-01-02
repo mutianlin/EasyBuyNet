@@ -1,5 +1,10 @@
 package com.eleven.dao;
 
-public interface IndentDao {
-}
+import java.sql.ResultSet;
+import java.util.List;
 
+import com.eleven.entity.Indent;
+
+public interface IndentDao {
+	public List<Indent> value(ResultSet rs);
+}
