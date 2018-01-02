@@ -16,21 +16,21 @@
 			</div>
 		</div>
 		<div id="product" class="main">
-			<h1>铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</h1>
+			<h1>${goods.g_name}</h1>
 			<div class="infos">
 				<div class="thumb">
-					<img src="images/product/0.jpg" />
+					<img src="images/product/${goods.g_name }.jpg" width="300px" height="300px"/>
 				</div>
 				<div class="buy">
 					<p>
-						商城价：<span class="price">￥99.00</span>
+						商城价：<span class="price">￥${goods.g_price }</span>
 					</p>
-					<p>库 存：有货</p>
+					<p>库 存：${goods.g_count }</p>
 					<p>库 存：有货</p>
 					<p>库 存：有货</p>
 					<p>库 存：有货</p>
 					<div class="button">
-						<input type="button" name="button" value="" onclick="goBuy(1)" /><a
+						<input type="button" name="button" value="" onclick="goBuy(${goods.g_id})" /><a
 							href="#">放入购物车</a>
 					</div>
 				</div>

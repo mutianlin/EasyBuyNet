@@ -19,36 +19,40 @@ public class GoodsDaoImpl implements com.eleven.dao.GoodsDao {
 
 	@Override
 	public List<Goods> selectBySmallclass(String smallClassName) {
-		String sql = "select * from `goods`";
+		String sql = "select * from `goods` where smallclass=?";
 		List<Object> list = new ArrayList<Object>();
+		list.add(smallClassName);
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
 	@Override
 	public List<Goods> selectByBigclass(String bigClassName) {
-		String sql = "select * from `goods`";
+		String sql = "select * from `goods` where Bigclass=?";
 		List<Object> list = new ArrayList<Object>();
+		list.add(bigClassName);
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
 	@Override
 	public List<Goods> selectByType(String type) {
-		String sql = "select * from `goods`";
+		String sql = "select * from `goods` where type=?";
 		List<Object> list = new ArrayList<Object>();
+		list.add(type);
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
 	@Override
 	public List<Goods> selectByDis() {
-		String sql = "select * from `goods`";
+		String sql = "select * from `goods` where smallclass!=1";
 		List<Object> list = new ArrayList<Object>();
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
 	@Override
 	public List<Goods> value(ResultSet rs) {
+		List<Goods> l = new ArrayList<Goods>();
 		try {
-			while(rs.next()){
+			while (rs.next()) {
 				Goods g = new Goods();
 				g.setG_id(rs.getInt("g_id"));
 				g.setG_name(rs.getString("g_name"));
@@ -65,11 +69,46 @@ public class GoodsDaoImpl implements com.eleven.dao.GoodsDao {
 				g.setG_price(rs.getDouble("g_price"));
 				g.setG_dis(rs.getDouble("g_dis"));
 				g.setG_type(rs.getString("g_type"));
+				l.add(g);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return l;
+	}
+
+	@Override
+	public Goods selectById(int id) {
+		String sql = "select * from `goods` where g_id=?";
+		List<Object> list = new ArrayList<Object>();
+		list.add(id);
+		List<Goods> l = value(DbUtil.executeQuery(sql, list));
+		if (l.size() >= 1) {
+			return l.get(0);
+		} else {
+			return null;
+		}
+
+	}
+
+	@Override
+	public Goods selectByName(String name) {
+		String sql = "select * from `goods` where g_name=?";
+		List<Object> list = new ArrayList<Object>();
+		list.add(name);
+		List<Goods> l = value(DbUtil.executeQuery(sql, list));
+		if (l.size() >= 1) {
+			return l.get(0);
+		} else {
+			return null;
+		}
+	}
+
+	@Override
+	public List<Goods> select(int number) {
+		String sql = "select * from `goods` limit 10";
+		List<Object> list = new ArrayList<Object>();
+		return value(DbUtil.executeQuery(sql, list));
 	}
 
 }

@@ -15,33 +15,35 @@
 						<th>购买数量</th>
 						<th>操作</th>
 					</tr>
-					<tr id="product_id_1">
-						<td class="thumb"><img src="images/product/0_tiny.gif" /><a
-							href="product-view.jsp">铁三角 Audio-Technica ATH-EQ300M-SV 银色
-								挂耳式耳机</a>
+					<c:forEach items="${blist}" var="b">
+					<tr id="product_id_${b.c_id}">
+						<td class="thumb">
+						<img src="images/product/${b.c_name}.jpg" width="54px" height="54px" />
+						<a href="goodsServlet?type=goods&name=${b.c_name}">${b.c_name}</a>
 						</td>
-						<td class="price" id="price_id_1"><span>￥99.00</span> <input
-							type="hidden" value="99" /></td>
+						<td class="price" id="price_id_${b.c_id}"><span>￥${b.c_money}</span>
+						<input type="hidden" value="${b.c_price}" /></td>
 						<td class="number">
 							<dl>
 								<dt>
-									<input id="number_id_1" type="text" name="number" value="1" />
+									<input id="number_id_${b.c_id}" type="text" name="number" value="${b.c_count}" />
 								</dt>
-								<dd onclick="reloadPrice(1,true);">修改</dd>
+								<dd onclick="reloadPrice(${b.c_id},true);">修改</dd>
 							</dl></td>
-						<td class="delete"><a href="javascript:delShopping(1);">删除</a>
+						<td class="delete"><a href="javascript:delShopping(${b.c_id});">删除</a>
 						</td>
 					</tr>
+					</c:forEach>
 				</table>
 				<div class="button">
 					<input type="submit" value="" />
 				</div>
 			</form>
 		</div>
-		<script type="text/javascript">
+		<!-- <script type="text/javascript">
 			document.write("Cookie中记录的购物车商品ID：" + getCookie("product")
 					+ "，可以在动态页面中进行读取");
-		</script>
+		</script> -->
 	</div>
 	<div id="footer">Copyright &copy; 2010 All Rights Reserved.</div>
 </body>

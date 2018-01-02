@@ -1,5 +1,10 @@
 package com.eleven.dao;
 
-public interface NoticeDao {
+import java.sql.ResultSet;
+import java.util.List;
 
+import com.eleven.entity.Notice;
+
+public interface NoticeDao {
+	public List<Notice> value(ResultSet rs);
 }

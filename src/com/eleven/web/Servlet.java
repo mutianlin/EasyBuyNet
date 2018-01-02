@@ -1,6 +1,7 @@
 package com.eleven.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,11 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.eleven.entity.Goods;
 import com.eleven.entity.User;
 import com.eleven.service.BigclassService;
+import com.eleven.service.GoodsService;
 import com.eleven.service.SmallclassService;
 import com.eleven.service.UserService;
 import com.eleven.service.impl.BigclassServiceImpl;
+import com.eleven.service.impl.GoodsServiceImpl;
 import com.eleven.service.impl.SmallclassServiceImpl;
 import com.eleven.service.impl.UserServiceImpl;
 
@@ -62,6 +66,13 @@ public class Servlet extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		}else if("logout".equals(type)){//登出
 			session.removeAttribute("user");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}else if("index".equals(type)){//index.jsp显示商品
+			GoodsService goodsService = new GoodsServiceImpl();
+			List<Goods> glist = goodsService.select(8);
+			request.setAttribute("glist", glist);//商品存入request
+			List<Goods> Hglist = goodsService.select(12);
+			request.setAttribute("Hglist", Hglist);//商品存入request
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

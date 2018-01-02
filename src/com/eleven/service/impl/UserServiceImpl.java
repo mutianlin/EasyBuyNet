@@ -1,7 +1,10 @@
 package com.eleven.service.impl;
 
+import java.util.List;
+
 import com.eleven.dao.UserDao;
 import com.eleven.dao.impl.UserDaoImpl;
+import com.eleven.entity.Goods;
 import com.eleven.entity.User;
 import com.eleven.service.UserService;
 
@@ -22,4 +25,5 @@ public class UserServiceImpl implements UserService {
 			return false;
 		}
 	}
+
 }

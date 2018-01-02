@@ -6,7 +6,7 @@ public class Buycar {
 	private String c_name;
 	private double c_price;
 	private int c_count;
-	private String c_dis;
+	private String c_desc;
 	private double c_money;
 
 	public int getC_id() {
@@ -49,12 +49,12 @@ public class Buycar {
 		this.c_count = c_count;
 	}
 
-	public String getC_dis() {
-		return c_dis;
+	public String getC_desc() {
+		return c_desc;
 	}
 
-	public void setC_dis(String c_dis) {
-		this.c_dis = c_dis;
+	public void setC_desc(String c_desc) {
+		this.c_desc = c_desc;
 	}
 
 	public double getC_money() {

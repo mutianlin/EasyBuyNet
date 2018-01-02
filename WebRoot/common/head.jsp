@@ -1,19 +1,18 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
 <div id="header" class="wrap">
 	<div id="logo">
 		<a href="index.jsp"><img src="images/logo.gif" /></a>
 	</div>
 	<div class="help">
-		<a href="#" class="shopping">购物车</a>
 		<c:choose>
 			<c:when test="${empty user }">
+			<a href="login.jsp" class="shopping">购物车</a>
 				<a href="login.jsp">登录</a>
 				<a href="register.jsp">注册</a>
 			</c:when>
 			<c:otherwise>
+			<a href="goodsServlet?type=buycar" class="shopping">购物车</a>
 				<a href="#">${user.getAccount()}</a>
 				<a href="servlet?type=logout">登出</a>
 			</c:otherwise>

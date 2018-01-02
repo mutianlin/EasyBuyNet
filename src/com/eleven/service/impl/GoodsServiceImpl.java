@@ -36,4 +36,19 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDao.selectByDis();
 	}
 
+	@Override
+	public Goods selectById(int id) {
+		return goodsDao.selectById(id);
+	}
+
+	@Override
+	public Goods selectByName(String name) {
+		return goodsDao.selectByName(name);
+	}
+
+	@Override
+	public List<Goods> select(int number) {
+		return goodsDao.select(number);
+	}
+
 }
