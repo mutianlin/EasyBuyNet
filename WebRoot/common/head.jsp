@@ -13,6 +13,8 @@
 			</c:when>
 			<c:otherwise>
 			<a href="goodsServlet?type=buycar" class="shopping">购物车</a>
+			<%System.out.print("username为");
+			System.out.println(session.getAttribute("user")); %>
 				<a href="#">${user.getAccount()}</a>
 				<a href="servlet?type=logout">登出</a>
 			</c:otherwise>

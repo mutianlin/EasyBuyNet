@@ -3,11 +3,11 @@
 <body>
 	<%@ include file="common/head.jsp"%>
 
-	<c:if test="${empty blist}">
+	<%-- <c:if test="${empty blist}">
 		<%
 			response.sendRedirect("servlet?type=indexClass");
 		%>
-	</c:if>
+	</c:if> --%>
 	<c:if test="${empty glist}">
 		<%
 			response.sendRedirect("servlet?type=index");
@@ -50,12 +50,12 @@
 						<li>
 							<dl>
 								<dt>
-									<a href="goodsServlet?type=goods&name=${g.g_name }"
-										target="_blank"><img src="images/product/${g.g_name }.jpg" />
+									<a href="goodsServlet?type=goods&id=${g.g_id}"
+										target="_blank"><img src="images/product/${g.g_id}.jpg" />
 									</a>
 								</dt>
 								<dd class="title">
-									<a href="goodsServlet?type=goods&name=${g.g_name }"
+									<a href="goodsServlet?type=goods&id=${g.g_id}"
 										target="_blank">${g.g_name }</a>
 								</dd>
 								<dd class="price">￥${g.g_price }</dd>
@@ -113,12 +113,12 @@
 						<li>
 							<dl>
 								<dt>
-									<a href="goodsServlet?type=goods&name=${g.g_name }"
-										target="_blank"><img src="images/product/${g.g_name }.jpg" />
+									<a href="goodsServlet?type=goods&id=${g.g_id}"
+										target="_blank"><img src="images/product/${g.g_id}.jpg" />
 									</a>
 								</dt>
 								<dd class="title">
-									<a href="goodsServlet?type=goods&name=${g.g_name }"
+									<a href="goodsServlet?type=goods&id=${g.g_id}"
 										target="_blank">${g.g_name }</a>
 								</dd>
 								<dd class="price">￥${g.g_price }</dd>

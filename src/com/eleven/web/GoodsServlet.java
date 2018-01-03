@@ -40,8 +40,10 @@ public class GoodsServlet extends HttpServlet {
 						response);
 			}
 		} else if ("goods".equals(type)) {
-			String name = request.getParameter("name");
-			request.setAttribute("goods", gs.selectByName(name));
+//			String name = request.getParameter("name");
+			int id = Integer.valueOf(request.getParameter("id"));
+//			request.setAttribute("goods", gs.selectByName(name));
+			request.setAttribute("goods", gs.selectById(id));
 			request.getRequestDispatcher("product-view.jsp").forward(request,
 					response);
 		}

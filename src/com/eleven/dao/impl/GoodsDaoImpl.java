@@ -106,8 +106,9 @@ public class GoodsDaoImpl implements com.eleven.dao.GoodsDao {
 
 	@Override
 	public List<Goods> select(int number) {
-		String sql = "select * from `goods` limit 10";
+		String sql = "select * from `goods` limit ?";
 		List<Object> list = new ArrayList<Object>();
+		list.add(number);
 		return value(DbUtil.executeQuery(sql, list));
 	}
 

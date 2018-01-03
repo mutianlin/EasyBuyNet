@@ -8,15 +8,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理 - 易买网</title>
-<link type="text/css" rel="stylesheet" href="../css/style.css" />
-<script type="text/javascript" src="../scripts/function-manage.js"></script>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="scripts/function-manage.js"></script>
 </head>
 <body>
 <div id="header" class="wrap">
-	<div id="logo"><img src="../images/logo.gif" /></div>
-	<div class="help"><a href="../index.jsp">返回前台页面</a></div>
+	<div id="logo"><img src="images/logo.gif" /></div>
+	<div class="help"><a href="index.jsp">返回前台页面</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
 			<li><a href="index.jsp">首页</a></li>

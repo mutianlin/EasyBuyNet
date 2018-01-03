@@ -1,8 +1,11 @@
 package com.eleven.entity;
 
+import java.net.URLEncoder;
+
 public class Goods {
 	private int g_id;
 	private String g_name;
+	private String g_nameToUTF8;
 	private int gb_id;
 	private int gs_id;
 	private String g_bpic;
@@ -31,6 +34,19 @@ public class Goods {
 
 	public void setG_name(String g_name) {
 		this.g_name = g_name;
+		setG_nameToUTF8();
+	}
+	
+	public String getG_nameToUTF8() {
+		return g_nameToUTF8;
+	}
+
+	private void setG_nameToUTF8() {
+		try {
+			g_nameToUTF8 = URLEncoder.encode(g_name, "utf-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public int getGb_id() {

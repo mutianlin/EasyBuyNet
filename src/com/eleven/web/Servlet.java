@@ -1,6 +1,7 @@
 package com.eleven.web;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -57,22 +58,22 @@ public class Servlet extends HttpServlet {
 				request.setAttribute("err", "用户名已存在");
 				request.getRequestDispatcher("register.jsp").forward(request, response);
 			}
-			
-		}else if("indexClass".equals(type)){//index.jsp显示列表
-			SmallclassService smallclassService = new SmallclassServiceImpl();
-			BigclassService bigclassService = new BigclassServiceImpl();
-			session.setAttribute("blist", bigclassService.selectAll());//大分类存入会话
-			session.setAttribute("slist", smallclassService.selectAll());//小分类存入会话
-			response.sendRedirect("index.jsp");
 		}else if("logout".equals(type)){//登出
 			session.removeAttribute("user");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}else if("index".equals(type)){//index.jsp显示商品
+			SmallclassService smallclassService = new SmallclassServiceImpl();
+			BigclassService bigclassService = new BigclassServiceImpl();
 			GoodsService goodsService = new GoodsServiceImpl();
 			List<Goods> glist = goodsService.select(8);
+//			for(Goods g : glist){//显示解码后名字。但是el表达式貌似又转了一下码
+//				System.out.println(g.getG_nameToUTF8());
+//			}
 			request.setAttribute("glist", glist);//商品存入request
 			List<Goods> Hglist = goodsService.select(12);
 			request.setAttribute("Hglist", Hglist);//商品存入request
+			session.setAttribute("blist", bigclassService.selectAll());//大分类存入会话
+			session.setAttribute("slist", smallclassService.selectAll());//小分类存入会话
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 	}

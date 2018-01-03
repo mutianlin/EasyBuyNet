@@ -10,19 +10,19 @@
 			<div class="news-list">
 				<h4>最新公告</h4>
 				<ul>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
 				</ul>
 			</div>
@@ -30,19 +30,19 @@
 			<div class="news-list">
 				<h4>新闻动态</h4>
 				<ul>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
-					<li><a href="news-view.html" target="_blank">抢钱啦</a>
+					<li><a href="news-view.jsp" target="_blank">抢钱啦</a>
 					</li>
 				</ul>
 			</div>
