@@ -8,24 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.eleven.service.UserService;
-import com.eleven.service.impl.UserServiceImpl;
-
-public class UserServlet extends HttpServlet {
+public class AdminServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("admin doGet");
 		doPost(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		UserService us = new UserServiceImpl();
-		String type = request.getParameter("type");
-		if ("register".equals(type)) {
-			
-//			us.login(account, password);
-		}
+		
 	}
 
 }

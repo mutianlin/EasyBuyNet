@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 127.0.0.1
-Source Server Version : 50553
+Source Server         : root
+Source Server Version : 50717
 Source Host           : localhost:3306
 Source Database       : easybuynet
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-01-02 11:40:41
+Date: 2018-01-03 11:13:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admin`
+-- Table structure for admin
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ INSERT INTO `admin` VALUES ('2', 'ywk', '123');
 INSERT INTO `admin` VALUES ('3', 'cxf', '123');
 
 -- ----------------------------
--- Table structure for `bigclass`
+-- Table structure for bigclass
 -- ----------------------------
 DROP TABLE IF EXISTS `bigclass`;
 CREATE TABLE `bigclass` (
@@ -54,34 +54,35 @@ INSERT INTO `bigclass` VALUES ('3', '3');
 INSERT INTO `bigclass` VALUES ('4', '4');
 
 -- ----------------------------
--- Table structure for `buycar`
+-- Table structure for buycar
 -- ----------------------------
 DROP TABLE IF EXISTS `buycar`;
 CREATE TABLE `buycar` (
   `c_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `u_id` int(11) NOT NULL COMMENT '用户id',
   `c_name` varchar(20) DEFAULT NULL COMMENT '所购商品名称',
-  `c_price` double(11,0) DEFAULT NULL COMMENT '所购商品价格',
+  `c_price` double(11,2) DEFAULT NULL COMMENT '所购商品价格',
   `c_count` int(11) DEFAULT NULL COMMENT '所购商品数量',
   `c_desc` varchar(20) DEFAULT NULL COMMENT '所购商品描述',
-  `c_money` double(11,0) DEFAULT NULL COMMENT '所购商品支付钱数',
+  `c_money` double(11,2) DEFAULT NULL COMMENT '所购商品支付钱数',
   PRIMARY KEY (`c_id`),
   KEY `u_id` (`u_id`),
-  CONSTRAINT `buycar_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='购物车';
+  KEY `c_name` (`c_name`),
+  CONSTRAINT `buycar_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `buycar_ibfk_2` FOREIGN KEY (`c_name`) REFERENCES `goods` (`g_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of buycar
 -- ----------------------------
-INSERT INTO `buycar` VALUES ('1', '3', '10', '50', '3', null, '150');
-INSERT INTO `buycar` VALUES ('2', '3', '6', '1', '5', null, '5');
+INSERT INTO `buycar` VALUES ('1', '3', '10', '50.00', '3', null, '150.00');
 
 -- ----------------------------
--- Table structure for `goods`
+-- Table structure for goods
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
-  `g_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `g_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id，也是图片名字',
   `g_name` varchar(50) NOT NULL COMMENT '商品名称',
   `gb_id` int(11) NOT NULL COMMENT '大分类id',
   `gs_id` int(11) NOT NULL COMMENT '小分类id',
@@ -91,9 +92,9 @@ CREATE TABLE `goods` (
   `g_spic1` varchar(50) DEFAULT NULL COMMENT '小分类图片路径1',
   `g_spic2` varchar(50) DEFAULT NULL COMMENT '小分类图片路径2',
   `g_desc` varchar(300) DEFAULT NULL COMMENT '描述',
-  `g_carry` double(11,0) DEFAULT NULL COMMENT '运费',
+  `g_carry` double(11,2) DEFAULT NULL COMMENT '运费',
   `g_count` int(11) DEFAULT NULL COMMENT '数量',
-  `g_price` double(11,0) DEFAULT NULL COMMENT '价格',
+  `g_price` double(11,2) DEFAULT NULL COMMENT '价格',
   `g_dis` double(11,2) DEFAULT '1.00' COMMENT '折扣',
   `g_type` varchar(10) NOT NULL COMMENT '商品类型',
   PRIMARY KEY (`g_id`),
@@ -102,16 +103,24 @@ CREATE TABLE `goods` (
   KEY `gb_id` (`gb_id`),
   CONSTRAINT `goods_ibfk_2` FOREIGN KEY (`gs_id`) REFERENCES `smallclass` (`s_id`),
   CONSTRAINT `goods_ibfk_3` FOREIGN KEY (`gb_id`) REFERENCES `bigclass` (`b_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='商品';
 
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('1', '6', '1', '1', null, null, null, null, null, null, null, '10000', '1', '1.00', '1');
-INSERT INTO `goods` VALUES ('2', '10', '1', '1', null, null, null, null, null, null, null, '200', '50', '1.00', '1');
+INSERT INTO `goods` VALUES ('2', '10', '1', '1', null, null, null, null, null, null, null, '200', '50.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('3', '法国德菲丝松露精品巧克力500g/盒', '1', '1', null, null, null, null, null, null, null, '200000', '108.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('4', '乐扣普通型保鲜盒圣诞7件套', '1', '1', null, null, null, null, null, null, null, '300000', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('5', '欧珀莱均衡保湿四件套', '1', '1', null, null, null, null, null, null, null, '123', '279.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('6', '联想笔记本电脑 高速独立显存', '1', '1', null, null, null, null, null, null, null, '132', '4199.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('7', '法姿韩版显瘦彩边时尚牛仔铅笔裤', '1', '1', null, null, null, null, null, null, null, '123', '49.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('8', 'Genius925纯银施华洛世奇水晶吊坠', '1', '1', null, null, null, null, null, null, null, '123', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('9', '利仁2018M福满堂电饼铛 好用实惠', '1', '1', null, null, null, null, null, null, null, '123', '268.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('10', '达派高档拉杆箱20寸 经典款式', '1', '1', '', null, null, null, null, null, null, '123', '198.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('11', '爱国者MP4 全屏触摸多格式播放 4G', '1', '1', null, null, null, null, null, null, null, '123', '289.00', '1.00', '1');
 
 -- ----------------------------
--- Table structure for `indent`
+-- Table structure for indent
 -- ----------------------------
 DROP TABLE IF EXISTS `indent`;
 CREATE TABLE `indent` (
@@ -121,8 +130,8 @@ CREATE TABLE `indent` (
   `i_name` varchar(50) NOT NULL COMMENT '订单名称',
   `i_price` int(11) DEFAULT NULL COMMENT '订单价格',
   `i_count` int(11) NOT NULL COMMENT '订单数量',
-  `i_money` double(11,0) DEFAULT NULL COMMENT '订单须支付钱数',
-  `i_dis` double(11,0) DEFAULT NULL COMMENT '订单折扣',
+  `i_money` double(11,2) DEFAULT NULL COMMENT '订单须支付钱数',
+  `i_dis` double(11,2) DEFAULT NULL COMMENT '订单折扣',
   `i_status` varchar(10) NOT NULL COMMENT '订单状态',
   `i_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '订单日期',
   PRIMARY KEY (`i_id`),
@@ -137,7 +146,7 @@ CREATE TABLE `indent` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `notice`
+-- Table structure for notice
 -- ----------------------------
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
@@ -152,7 +161,7 @@ CREATE TABLE `notice` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `smallclass`
+-- Table structure for smallclass
 -- ----------------------------
 DROP TABLE IF EXISTS `smallclass`;
 CREATE TABLE `smallclass` (
@@ -181,7 +190,7 @@ INSERT INTO `smallclass` VALUES ('11', '4.2', '4');
 INSERT INTO `smallclass` VALUES ('12', '4.3', '4');
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -198,7 +207,7 @@ CREATE TABLE `user` (
   `likes` varchar(50) DEFAULT NULL COMMENT '爱好',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of user
@@ -206,3 +215,5 @@ CREATE TABLE `user` (
 INSERT INTO `user` VALUES ('1', 'test', 'test', '', '', null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '', '', null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('3', '123', '123', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('5', 'q', 'q', '', '', null, null, null, null, null, null);

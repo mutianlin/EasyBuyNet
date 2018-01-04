@@ -2,9 +2,6 @@
 <%@ include file="common/common.jsp"%>
 <body>
 	<%@ include file="common/head.jsp"%>
-	<div id="position" class="wrap">
-		您现在的位置：<a href="index.jsp">易买网</a> &gt; 阅读新闻
-	</div>
 	<div id="main" class="wrap">
 		<div class="left-side">
 			<div class="news-list">
