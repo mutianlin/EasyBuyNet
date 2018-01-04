@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebRoot/guestbook.jsp=UTF-8
 encoding//WebRoot/login.jsp=UTF-8
+encoding//WebRoot/manage/common/liftNavigation\ .jsp=UTF-8
 encoding//src/com/eleven/util/DbUtil.java=UTF-8
 encoding/<project>=UTF-8
