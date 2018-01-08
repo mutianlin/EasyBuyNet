@@ -23,7 +23,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		}else{
 			return null;
 		}
-		
 	}
 
 	@Override
@@ -39,9 +38,9 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 	@Override
 	public List<User> value(ResultSet resultset) {
 		List<User> list = new ArrayList<User>();
-		User u = new User();
 		try {
 			while(resultset.next()){
+				User u = new User();
 				u.setId(resultset.getInt("id"));
 				u.setAccount(resultset.getString("account"));
 				u.setPassword(resultset.getString("password"));
@@ -63,9 +62,36 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 
 	@Override
 	public List<User> seeAllUser() {
-		String sql = "select * from user ";
+		String sql = "select * from user";
 		List<Object> list = new ArrayList<Object>();
 		return value(DbUtil.executeQuery(sql, list));
+	}
+
+	@Override
+	public User seeUserById(int id) {
+		String sql = "select * from user where id= ? ";
+		List<Object> list = new ArrayList<Object>();
+		list.add(id);
+		List<User> l = value(DbUtil.executeQuery(sql, list));
+		if(l.size()==1){
+			return l.get(0);
+		}else{
+			return null;
+		}
+	}
+
+	@Override
+	public int userUpdateById(int id,User u) {
+		String sql = "UPDATE `user` SET account=? ,password=? ,userName=? ,sex=? ,birth=? ,phone=? ,address=? WHERE id=5";
+		List<Object> list = new ArrayList<Object>();
+		list.add(u.getAccount());
+		list.add(u.getPassword());
+		list.add(u.getUserName());
+		list.add(u.getSex());
+		list.add(u.getBirth());
+		list.add(u.getPhone());
+		list.add(u.getAddress());
+		return DbUtil.executeUpdate(sql, list);
 	}
 
 }

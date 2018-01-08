@@ -30,4 +30,18 @@ public class UserServiceImpl implements UserService {
 		return userDao.seeAllUser();
 	}
 
+	@Override
+	public User seeUserById(int id) {
+		return userDao.seeUserById(id);
+	}
+
+	@Override
+	public boolean userUpdateById(int id,User u) {
+		if(userDao.userUpdateById(id,u)==1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }

@@ -1,7 +1,7 @@
 // JavaScript Document
-function Delete(id)
+function Delete(deleteType,id)
 {
 	if(confirm("确定要删除吗？")) {
-		location.href = "user-delete.html?id=" + id;
+		location.href = "adminServlet?type=delete&delete="+deleteType+"&id=" + id;
 	}
 }

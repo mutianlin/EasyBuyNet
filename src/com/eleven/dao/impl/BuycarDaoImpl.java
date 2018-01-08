@@ -25,6 +25,7 @@ public class BuycarDaoImpl implements com.eleven.dao.BuycarDao {
 				Buycar g = new Buycar();
 				g.setC_id(rs.getInt("c_id"));
 				g.setU_id(rs.getInt("u_id"));
+				g.setG_id(rs.getInt("g_id"));
 				g.setC_name(rs.getString("c_name"));
 				g.setC_price(rs.getDouble("c_price"));
 				g.setC_count(rs.getInt("c_count"));

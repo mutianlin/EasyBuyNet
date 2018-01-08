@@ -1,4 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -55,22 +56,19 @@
 					<th>手机</th>
 					<th>操作</th>
 				</tr>
-				<tr>
-					<td class="first w4 c">1</td>
-					<td class="w1 c">张三丰</td>
-					<td class="w2 c">男</td>
-					<td>fengsan.zhang@prd.com</td>
-					<td class="w4 c">13888888888</td>
-					<td class="w1 c"><a href="user-modify.jsp">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
-				<tr>
-					<td class="first w4 c">2</td>
-					<td class="w1 c">杨二郎</td>
-					<td class="w2 c">男</td>
-					<td>fengsan.zhang@prd.com</td>
-					<td class="w4 c">13888888888</td>
-					<td class="w1 c"><a href="user-modify.jsp">修改</a> <a href="javascript:Delete(1);">删除</a></td>
-				</tr>
+					<c:forEach items="${userlist}" var="u">
+						<tr>
+							<td class="first w4 c">${u.id}</td>
+							<td class="w1 c">${u.userName}</td>
+							<td class="w2 c">${u.sex}</td>
+							<td>${u.email}</td>
+							<td class="w4 c">${u.phone}</td>
+							<td class="w1 c">
+								<a href="adminServlet?type=userUpdate&updateById=${u.id}">修改</a>
+								<a href="javascript:Delete(user,${u.id});">删除</a>
+							</td>
+						</tr>
+					</c:forEach>
 			</table>
 		</div>
 	</div>

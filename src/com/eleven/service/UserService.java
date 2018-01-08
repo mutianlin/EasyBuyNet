@@ -10,4 +10,8 @@ public interface UserService {
 	public boolean register(User user);
 	
 	public List<User> seeAllUser();
+	
+	public User seeUserById(int id);
+	
+	public boolean userUpdateById(int id,User u);
 }

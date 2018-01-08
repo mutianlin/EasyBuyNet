@@ -11,7 +11,11 @@ public interface UserDao {
 
 	public int register(User user);
 	
-	public List<User> value(ResultSet rs);
+	List<User> value(ResultSet rs);
 	
 	public List<User> seeAllUser();
+	
+	public User seeUserById(int id);
+	
+	public int userUpdateById(int id,User u);
 }

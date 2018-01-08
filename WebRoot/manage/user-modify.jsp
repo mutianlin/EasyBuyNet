@@ -54,23 +54,23 @@
 		<div class="main">
 			<h2>修改用户</h2>
 			<div class="manage">
-				<form action="manage-result.jsp">
+				<form action="manage/manage-result.jsp">
 					<table class="form">
 						<tr>
 							<td class="field">用户名：</td>
 							<td><input type="text" class="text" name="userName"
-								value="zhangsan" readonly="readonly" />
+								value="${updateUser.account}" readonly="readonly" />
 							</td>
 						</tr>
 						<tr>
 							<td class="field">姓名：</td>
-							<td><input type="text" class="text" name="name" value="张三" />
+							<td><input type="text" class="text" name="name" value="${updateUser.userName}" />
 							</td>
 						</tr>
 						<tr>
 							<td class="field">密码：</td>
-							<td><input type="text" class="text" name="passWord"
-								value="zhangsan" />
+							<td><input type="passWord" class="text" name="passWord"
+								value="${updateUser.password}" />
 							</td>
 						</tr>
 						<tr>
@@ -86,13 +86,13 @@
 						<tr>
 							<td class="field">手机号码：</td>
 							<td><input type="text" class="text" name="mobile"
-								value="13800000000" />
+								value="${updateUser.phone}" />
 							</td>
 						</tr>
 						<tr>
 							<td class="field">送货地址：</td>
 							<td><input type="text" class="text" name="address"
-								value="高老庄" />
+								value="${updateUser.address}" />
 							</td>
 						</tr>
 						<tr>

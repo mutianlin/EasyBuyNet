@@ -3,6 +3,7 @@ package com.eleven.entity;
 public class Buycar {
 	private int c_id;
 	private int u_id;
+	private int g_id;
 	private String c_name;
 	private double c_price;
 	private int c_count;
@@ -15,6 +16,14 @@ public class Buycar {
 
 	public void setC_id(int c_id) {
 		this.c_id = c_id;
+	}
+	
+	public int getG_id() {
+		return g_id;
+	}
+
+	public void setG_id(int g_id) {
+		this.g_id = g_id;
 	}
 
 	public int getU_id() {
