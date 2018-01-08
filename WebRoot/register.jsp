@@ -32,14 +32,16 @@
 						<tr>
 							<td class="field">确认密码：</td>
 							<td><input class="text" type="password" name="rePassWord"
-								onfocus="FocusItem(this)" onblur="CheckItem(this);" /><span></span>
+								onfocus="FocusItem(this)" onblur="CheckItem(this);" />
+								<span></span>
 							</td>
 						</tr>
 						<tr>
 							<td class="field">验证码：</td>
 							<td><input class="text verycode" type="text" name="veryCode"
-								onfocus="FocusItem(this)" onblur="CheckItem(this);" /><img
-								id="veryCode" src="" /><span></span>
+								onfocus="FocusItem(this)" onblur="CheckItem(this);" />
+								<img id="veryCode" src="validataCode" onclick="this.src+='?'+Math.floor(Math.random()*10);" alt="点击刷新" />
+								<span></span>
 							</td>
 						</tr>
 						<tr>

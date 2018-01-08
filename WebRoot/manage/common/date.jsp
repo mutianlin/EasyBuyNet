@@ -152,6 +152,7 @@
 	<option value="28">28</option>
 	<option value="29">29</option>
 	<option value="30">30</option>
+	<option value="31">31</option>
 </select>
 月
 <select name="birthday">

@@ -11,11 +11,13 @@ public class Test {
 //			Scanner in = new Scanner(System.in);//控制台输入会默认转码，鬼知道转的什么编码
 //			String a = in.next();
 //			System.out.println(a);
-			String b = URLEncoder.encode("", "utf-8");
+			String b = URLEncoder.encode("乱码", "utf-8");
 			System.out.println(b);
 			String e = URLEncoder.encode("乱码", "gbk");
 			System.out.println(e);
-			String d = URLEncoder.encode("", "ISO-8859-1");
+			String q = URLEncoder.encode("乱码", "utf-16");
+			System.out.println(q);
+			String d = URLEncoder.encode("乱码", "ISO-8859-1");
 			System.out.println(d);
 			String c = URLDecoder.decode(b,"utf-8");
 			System.out.println(c);

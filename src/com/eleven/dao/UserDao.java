@@ -12,4 +12,6 @@ public interface UserDao {
 	public int register(User user);
 	
 	public List<User> value(ResultSet rs);
+	
+	public List<User> seeAllUser();
 }

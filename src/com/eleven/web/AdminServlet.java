@@ -30,6 +30,7 @@ public class AdminServlet extends HttpServlet {
 		if("user".equals(type)){
 			UserService us = new UserServiceImpl();
 			
+			request.getRequestDispatcher("manage/user.jsp").forward(request, response);
 		}
 	}
 

@@ -1,5 +1,7 @@
 package com.eleven.service;
 
+import java.util.List;
+
 import com.eleven.entity.User;
 
 public interface UserService {
@@ -7,4 +9,5 @@ public interface UserService {
 
 	public boolean register(User user);
 	
+	public List<User> seeAllUser();
 }
