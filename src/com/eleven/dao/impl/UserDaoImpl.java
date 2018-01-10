@@ -17,7 +17,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		list.add(account);
 		list.add(password);
 		List<User> l = value(DbUtil.executeQuery(sql, list));
-//		System.out.println("登录 in userdao");
 		if(l.size()==1){
 			return l.get(0);
 		}else{
@@ -31,7 +30,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		List<Object> list = new ArrayList<Object>();
 		list.add(user.getAccount());
 		list.add(user.getPassword());
-//		System.out.println("注册 in userdao");
 		return DbUtil.executeUpdate(sql, list);
 	}
 
@@ -82,7 +80,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 
 	@Override
 	public int userUpdateById(int id,User u) {
-		System.out.println("in userUpdateById");
 		String sql = "UPDATE `user` SET userName=? ,password=? ,userName=? ,sex=? ,birth=? ,phone=? ,address=? WHERE id=?";
 		List<Object> list = new ArrayList<Object>();
 		list.add(u.getUserName());
@@ -98,7 +95,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 
 	@Override
 	public int userAdd(User u) {
-		System.out.println("in userUpdateById");
 		String sql = "INSERT INTO `user`(account,password,userName,sex,birth,phone,address)" +
 				" VALUES ( ?, ?, ?, ?, ?, ?, ?);";
 		List<Object> list = new ArrayList<Object>();

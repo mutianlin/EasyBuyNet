@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<select name="birthyear">
+<select name="birthyear" id="byear">
 	<option value="1900">1900</option>
 	<option value="1901">1901</option>
 	<option value="1902">1902</option>
@@ -121,7 +121,7 @@
 	<option value="2018">2018</option>
 </select>
 年
-<select name="birthmonth">
+<select name="birthmonth" id="bmonth">
 	<option value="1">1</option>
 	<option value="2">2</option>
 	<option value="3">3</option>
@@ -136,7 +136,7 @@
 	<option value="12">12</option>
 </select>
 月
-<select name="birthday">
+<select name="birthday" id="bday">
 	<option value="1">1</option>
 	<option value="2">2</option>
 	<option value="3">3</option>

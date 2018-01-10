@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-01-09 07:30:49
+Date: 2018-01-10 20:00:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -108,16 +108,16 @@ CREATE TABLE `goods` (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('2', '10', '1', '1', null, null, null, null, null, null, null, '200', '50.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('3', '法国德菲丝松露精品巧克力500g/盒', '1', '1', null, null, null, null, null, null, null, '200000', '108.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('4', '乐扣普通型保鲜盒圣诞7件套', '1', '1', null, null, null, null, null, null, null, '300000', '69.90', '1.00', '1');
-INSERT INTO `goods` VALUES ('5', '欧珀莱均衡保湿四件套', '1', '1', null, null, null, null, null, null, null, '123', '279.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('6', '联想笔记本电脑 高速独立显存', '1', '1', null, null, null, null, null, null, null, '132', '4199.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('7', '法姿韩版显瘦彩边时尚牛仔铅笔裤', '1', '1', null, null, null, null, null, null, null, '123', '49.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('8', 'Genius925纯银施华洛世奇水晶吊坠', '1', '1', null, null, null, null, null, null, null, '123', '69.90', '1.00', '1');
-INSERT INTO `goods` VALUES ('9', '利仁2018M福满堂电饼铛 好用实惠', '1', '1', null, null, null, null, null, null, null, '123', '268.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('10', '达派高档拉杆箱20寸 经典款式', '1', '1', '', null, null, null, null, null, null, '123', '198.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('11', '爱国者MP4 全屏触摸多格式播放 4G', '1', '1', null, null, null, null, null, null, null, '123', '289.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('2', '10', '1', '1', 'images/product/2.jpg', null, null, null, null, null, null, '200', '50.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('3', '法国德菲丝松露精品巧克力500g/盒', '1', '1', 'images/product/3.jpg', null, null, null, null, null, null, '200000', '108.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('4', '乐扣普通型保鲜盒圣诞7件套', '1', '1', 'images/product/4.jpg', null, null, null, null, null, null, '300000', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('5', '欧珀莱均衡保湿四件套', '1', '1', 'images/product/5.jpg', null, null, null, null, null, null, '123', '279.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('6', '联想笔记本电脑 高速独立显存', '1', '1', 'images/product/6.jpg', null, null, null, null, null, null, '132', '4199.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('7', '法姿韩版显瘦彩边时尚牛仔铅笔裤', '1', '1', 'images/product/7.jpg', null, null, null, null, null, null, '123', '49.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('8', 'Genius925纯银施华洛世奇水晶吊坠', '1', '1', 'images/product/8.jpg', null, null, null, null, null, null, '123', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('9', '利仁2018M福满堂电饼铛 好用实惠', '1', '1', 'images/product/9.jpg', null, null, null, null, null, null, '123', '268.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('10', '达派高档拉杆箱20寸 经典款式', '1', '1', 'images/product/10.jpg', null, null, null, null, null, null, '123', '198.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('11', '爱国者MP4 全屏触摸多格式播放 4G', '1', '1', 'images/product/11.jpg', null, null, null, null, null, null, '123', '289.00', '1.00', '1');
 
 -- ----------------------------
 -- Table structure for indent
@@ -212,11 +212,11 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'test', 'test', '', '女', '2012.12.1', null, null, null, null, null);
+INSERT INTO `user` VALUES ('1', 'test', 'test', '请问', '女', null, null, null, '请问', '请问', null);
 INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '穆天麟', '男', '1998.10.4', null, null, null, null, null);
 INSERT INTO `user` VALUES ('3', '123', '123', '', '女', null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '女', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('5', 'q', 'q', '', '女', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('5', 'q', '?', '?', '?', '?', null, null, '?', '?', null);
 INSERT INTO `user` VALUES ('6', '王明清', 'wmq', '王明清', '男', null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('7', '张凯', 'zk', '张凯', '男', null, null, null, null, null, null);
 INSERT INTO `user` VALUES ('8', '吕文翔', 'lwx', '吕文翔', '男', null, null, null, null, null, null);

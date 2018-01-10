@@ -89,6 +89,8 @@
 						</tr>
 						<tr>
 							<td class="field">出生日期：</td>
+							<td><%@ include file="common/date.jsp"%>
+							</td>
 							<script type="text/javascript">
 								<%
 								Object u = request.getAttribute("updateUser");
@@ -101,21 +103,23 @@
 								System.out.println(birth[0]+birth[1]+birth[2]);
 								if(birth.length==3){
 								%>
-								var y = $("select[name='birthyear'] > [value='<%=birth[0] %>']");
-								var m = $("select[name='birthmonth'] > [value='<%=birth[1] %>']");
-								var d = $("select[name='birthday'] > [value='<%=birth[2] %>']");
+								var y = $("#byear > [value='<%=birth[0] %>']");
+								var m = $("#bmonth > [value='<%=birth[1] %>']");
+								var d = $("#bday > [value='<%=birth[2] %>']");
 								<%}
 								}else{%>
-								var y = $("select[name='birthyear'] > [value='2010']");
-								var m = $("select[name='birthmonth'] > [value='12']");
-								var d = $("select[name='birthday'] > [value='12']");
+								var y = $("#byear > [value='2010']");
+								var m = $("#bmonth > [value='12']");
+								var d = $("#bday > [value='12']");
 								<%}%>
-								y.selected=true;
+								alert(y.selected);
+								console.log(y);
+								console.log(m);
+								console.log(d);
+								y.selected="selected";
 								m.selected=true;
 								d.selected=true;
 							</script>
-							<td><%@ include file="common/date.jsp"%>
-							</td>
 						</tr>
 						<tr>
 							<td class="field">手机号码：</td>
