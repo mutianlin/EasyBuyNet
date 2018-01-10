@@ -34,7 +34,6 @@ public class GoodsServlet extends HttpServlet {
 			if (user == null) {
 				response.sendRedirect("login.jsp");
 			} else {
-
 				request.setAttribute("blist", bs.selectByUser(user.getId()));
 				request.getRequestDispatcher("shopping.jsp").forward(request,
 						response);
@@ -44,6 +43,8 @@ public class GoodsServlet extends HttpServlet {
 			request.setAttribute("goods", gs.selectById(id));
 			request.getRequestDispatcher("product-view.jsp").forward(request,
 					response);
+		}else if("toBuycar".equals(type)){
+			
 		}
 	}
 

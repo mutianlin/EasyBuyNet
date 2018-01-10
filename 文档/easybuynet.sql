@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-01-03 11:13:15
+Date: 2018-01-09 07:30:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -70,7 +70,7 @@ CREATE TABLE `buycar` (
   KEY `c_name` (`c_name`),
   CONSTRAINT `buycar_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`),
   CONSTRAINT `buycar_ibfk_2` FOREIGN KEY (`c_name`) REFERENCES `goods` (`g_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='购物车';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of buycar
@@ -207,13 +207,18 @@ CREATE TABLE `user` (
   `likes` varchar(50) DEFAULT NULL COMMENT '爱好',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'test', 'test', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('3', '123', '123', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('5', 'q', 'q', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1', 'test', 'test', '', '女', '2012.12.1', null, null, null, null, null);
+INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '穆天麟', '男', '1998.10.4', null, null, null, null, null);
+INSERT INTO `user` VALUES ('3', '123', '123', '', '女', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '女', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('5', 'q', 'q', '', '女', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('6', '王明清', 'wmq', '王明清', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('7', '张凯', 'zk', '张凯', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('8', '吕文翔', 'lwx', '吕文翔', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('9', '崔永鑫', 'cyx', '崔永鑫', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('10', '杜习港', 'dxg', '杜习港', '男', null, null, null, null, null, null);

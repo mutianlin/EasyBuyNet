@@ -82,15 +82,18 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 
 	@Override
 	public int userUpdateById(int id,User u) {
-		String sql = "UPDATE `user` SET account=? ,password=? ,userName=? ,sex=? ,birth=? ,phone=? ,address=? WHERE id=5";
+		System.out.println("in userUpdateById");
+		System.out.println(u.getPhone());
+		String sql = "UPDATE `user` SET userName=? ,password=? ,userName=? ,sex=? ,birth=? ,phone=? ,address=? WHERE id=?";
 		List<Object> list = new ArrayList<Object>();
-		list.add(u.getAccount());
+		list.add(u.getUserName());
 		list.add(u.getPassword());
 		list.add(u.getUserName());
 		list.add(u.getSex());
 		list.add(u.getBirth());
 		list.add(u.getPhone());
 		list.add(u.getAddress());
+		list.add(id);
 		return DbUtil.executeUpdate(sql, list);
 	}
 

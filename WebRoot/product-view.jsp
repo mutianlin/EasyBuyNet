@@ -15,7 +15,7 @@
 			<h1>${goods.g_name}</h1>
 			<div class="infos">
 				<div class="thumb">
-					<img src="images/product/${goods.g_id}.jpg" width="300px" height="300px"/>
+					<img src="${goods.g_bpic}" width="300px" height="300px"/>
 				</div>
 				<div class="buy">
 					<p>

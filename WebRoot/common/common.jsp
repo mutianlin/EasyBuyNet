@@ -14,9 +14,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>易买网</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
-<script type="text/javascript">
-	var code = ${code};
-</script>
+<script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/function-manage.js"></script>
 <script type="text/javascript" src="scripts/function.js"></script>
 

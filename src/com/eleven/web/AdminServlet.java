@@ -26,7 +26,7 @@ public class AdminServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		String type = request.getParameter("type");
-		if ("delete".equals(type)) {
+		if ("delete".equals(type)) {//删除操作
 
 		}
 
@@ -38,19 +38,33 @@ public class AdminServlet extends HttpServlet {
 			request.setAttribute("userlist", us.seeAllUser());
 			request.getRequestDispatcher("manage/user.jsp").forward(request,
 					response);
-		} else if ("userUpdate".equals(type)) {// 用户信息修改
+		} else if ("userUpdate".equals(type)) {// 用户信息修改界面数据获取
 			UserService us = new UserServiceImpl();
 			int id = Integer.valueOf(request.getParameter("updateById"));
 			request.setAttribute("updateUser", us.seeUserById(id));
 			request.getRequestDispatcher("manage/user-modify.jsp").forward(
 					request, response);
-		} else if ("userDoUpdate".equals(type)) {// 用户信息修改
+		} else if ("userDoUpdate".equals(type)) {// 对数据库执行用户信息修改
 			UserService us = new UserServiceImpl();
 			int id = Integer.valueOf(request.getParameter("updateById"));
+			User u = new User();
+			/*获取表单信息*/
+			u.setUserName(request.getParameter("name"));
+			u.setPassword(request.getParameter("passWord"));
+			int sex = Integer.valueOf(request.getParameter("sex"));
+			if(sex==1){
+				u.setSex("男");
+			}else if(sex==0){
+				u.setSex("女");
+			}else{
+				u.setSex("未知");
+			}
+			u.setPhone(request.getParameter("mobile"));
+			u.setAddress(request.getParameter("address"));
+			/*获取表单信息结束*/
+			us.userUpdateById(id,u);
 			
-			us.seeUserById(id);
-			
-			request.getRequestDispatcher("manage/user-modify.jsp").forward(
+			request.getRequestDispatcher("adminServlet?type=user").forward(
 					request, response);
 		} else if ("productAdd".equals(type)) {// 商品新增
 			request.getRequestDispatcher("manage/product-add.jsp").forward(

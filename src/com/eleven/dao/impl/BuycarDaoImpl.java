@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.eleven.entity.Buycar;
+import com.eleven.entity.Goods;
 import com.eleven.util.DbUtil;
 
 public class BuycarDaoImpl implements com.eleven.dao.BuycarDao {
@@ -37,6 +38,14 @@ public class BuycarDaoImpl implements com.eleven.dao.BuycarDao {
 			e.printStackTrace();
 		}
 		return l;
+	}
+
+	@Override
+	public int addGoods(int userId,Goods g) {
+		String sql ="SELECT * FROM buycar WHERE u_id = ?";
+		List<Object> list = new ArrayList<Object>();
+		list.add(userId);
+		return DbUtil.executeUpdate(sql, list);
 	}
 
 }
