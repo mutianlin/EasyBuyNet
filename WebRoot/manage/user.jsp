@@ -65,7 +65,7 @@
 							<td class="w4 c">${u.phone}</td>
 							<td class="w1 c">
 								<a href="adminServlet?type=userUpdate&updateById=${u.id}">修改</a>
-								<a href="javascript:Delete(user,${u.id});">删除</a>
+								<a href="adminServlet?type=userDelete&deleteById=${u.id}">删除</a>
 							</td>
 						</tr>
 					</c:forEach>

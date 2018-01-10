@@ -44,4 +44,22 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public boolean userAdd(User u) {
+		if(userDao.userAdd(u)==1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	@Override
+	public boolean userDelete(int id) {
+		if(userDao.userDelete(id)==1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }

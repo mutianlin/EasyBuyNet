@@ -110,7 +110,7 @@
 								var m = $("select[name='birthmonth'] > [value='12']");
 								var d = $("select[name='birthday'] > [value='12']");
 								<%}%>
-								y.selected='selected';
+								y.selected=true;
 								m.selected=true;
 								d.selected=true;
 							</script>

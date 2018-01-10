@@ -54,7 +54,7 @@
 		<div class="main">
 			<h2>新增用户</h2>
 			<div class="manage">
-				<form action="manage-result.jsp">
+				<form method="post" action="adminServlet?type=userAdd">
 					<table class="form">
 						<tr>
 							<td class="field">用户名：</td>
@@ -73,8 +73,10 @@
 						</tr>
 						<tr>
 							<td class="field">性别：</td>
-							<td><input type="radio" name="sex" value="1"
-								checked="checked" />男 <input type="radio" name="sex" value="1" />女</td>
+							<td>
+								<input type="radio" name="sex" value="1" checked="checked" />男 
+								<input type="radio" name="sex" value="0" />女
+							</td>
 						</tr>
 						<tr>
 							<td class="field">出生日期：</td>

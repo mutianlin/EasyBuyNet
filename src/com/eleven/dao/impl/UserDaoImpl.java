@@ -83,7 +83,6 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 	@Override
 	public int userUpdateById(int id,User u) {
 		System.out.println("in userUpdateById");
-		System.out.println(u.getPhone());
 		String sql = "UPDATE `user` SET userName=? ,password=? ,userName=? ,sex=? ,birth=? ,phone=? ,address=? WHERE id=?";
 		List<Object> list = new ArrayList<Object>();
 		list.add(u.getUserName());
@@ -93,6 +92,30 @@ public class UserDaoImpl implements com.eleven.dao.UserDao {
 		list.add(u.getBirth());
 		list.add(u.getPhone());
 		list.add(u.getAddress());
+		list.add(id);
+		return DbUtil.executeUpdate(sql, list);
+	}
+
+	@Override
+	public int userAdd(User u) {
+		System.out.println("in userUpdateById");
+		String sql = "INSERT INTO `user`(account,password,userName,sex,birth,phone,address)" +
+				" VALUES ( ?, ?, ?, ?, ?, ?, ?);";
+		List<Object> list = new ArrayList<Object>();
+		list.add(u.getAccount());
+		list.add(u.getPassword());
+		list.add(u.getUserName());
+		list.add(u.getSex());
+		list.add(u.getBirth());
+		list.add(u.getPhone());
+		list.add(u.getAddress());
+		return DbUtil.executeUpdate(sql, list);
+	}
+
+	@Override
+	public int userDelete(int id) {
+		String sql = "DELETE FROM `user` WHERE id=?";
+		List<Object> list = new ArrayList<Object>();
 		list.add(id);
 		return DbUtil.executeUpdate(sql, list);
 	}

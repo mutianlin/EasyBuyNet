@@ -46,15 +46,16 @@
 	<div class="main">
 		<h2>添加分类</h2>
 		<div class="manage">
-			<form action="manage-result.jsp">
+			<form action="adminServlet?type=productClassAdd">
 				<table class="form">
 					<tr>
 						<td class="field">父分类：</td>
 						<td>
 							<select name="parentId">
-								<option value="0" selected="selected">根栏目</option>
-								<option value="1">电器</option>
-								<option value="2">衣服</option>
+								<option value="0" selected="selected">大分类</option>
+								<c:forEach items="${biglist}" var="b">
+									<option value="${b.b_id}">${b.b_name}</option>
+								</c:forEach>
 							</select>
 						</td>
 					</tr>

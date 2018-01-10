@@ -3,7 +3,7 @@
 <dl>
 				<dt>用户管理</dt>
 				<dd>
-					<em><a href="adminServlet?type=userAdd">新增</a></em>
+					<em><a href="manage/user-add.jsp">新增</a></em>
 					<a href="adminServlet?type=user">用户管理</a>
 				</dd>
 				<dt>商品信息</dt>
