@@ -7,8 +7,10 @@ function Delete(deleteType,id)
 		$.ajax({
 			url:"deleteServlet?"+deleteType+"&"+id,
 			type:"post",	
-			success:function(data){
-				
+			success:function(result){
+				if(result>0){
+					alert("您要删除的存在关联数据，无法删除");
+				}
 			}
 		});
 		
