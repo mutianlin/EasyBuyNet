@@ -5,9 +5,9 @@ function Delete(deleteType,id)
 		
 		
 		$.ajax({
-			url:"deleteServlet?",
+			url:"deleteServlet?"+deleteType+"&"+id,
 			type:"post",	
-			success:function(id){
+			success:function(data){
 				
 			}
 		});
