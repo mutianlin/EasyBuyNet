@@ -3,14 +3,14 @@ function Delete(deleteType,id)
 {
 	if(confirm("确定要删除吗？")) {
 		
-//		
-//		$.ajax(){
-//			url:adminServlet?;
-//			type:post;
-//			success: function(id){
-//				
-//			}
-//		}
+		
+		$.ajax({
+			url:"deleteServlet?",
+			type:"post",	
+			success:function(id){
+				
+			}
+		});
 		
 		
 		
