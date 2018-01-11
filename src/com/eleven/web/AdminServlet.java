@@ -11,15 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.eleven.entity.User;
 import com.eleven.service.BigclassService;
+import com.eleven.service.SmallclassService;
 import com.eleven.service.UserService;
 import com.eleven.service.impl.BigclassServiceImpl;
+import com.eleven.service.impl.SmallclassServiceImpl;
 import com.eleven.service.impl.UserServiceImpl;
 
 public class AdminServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("admin doGet");
 		doPost(request, response);
 	}
 
@@ -117,7 +118,23 @@ public class AdminServlet extends HttpServlet {
 			request.setAttribute("biglist", bigclassService.selectAll());//大分类存入会话
 			request.getRequestDispatcher("manage/productClass-add.jsp").forward(
 					request, response);
+		} else if ("productClassAddDo".equals(type)) {// 执行分类新增
+			BigclassService bigclassService = new BigclassServiceImpl();
+			int parentId = Integer.valueOf(request.getParameter("parentId"));
+			String className = request.getParameter("className");
+			if(parentId==0){
+				bigclassService.add(className);
+			}else{
+				SmallclassService smallclassService = new SmallclassServiceImpl();
+				smallclassService.add(className,parentId);
+			}
+			request.getRequestDispatcher("manage/productClass-add.jsp").forward(
+					request, response);
 		} else if ("productClass".equals(type)) {// 分类管理
+			BigclassService bigclassService = new BigclassServiceImpl();
+			SmallclassService smallclassService = new SmallclassServiceImpl();
+			request.setAttribute("blist", bigclassService.selectAll());//大分类存入会话
+			request.setAttribute("slist", smallclassService.selectAll());//小分类存入会话
 			request.getRequestDispatcher("manage/productClass.jsp").forward(
 					request, response);
 		}

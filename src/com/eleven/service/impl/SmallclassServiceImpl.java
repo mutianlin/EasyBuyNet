@@ -12,8 +12,8 @@ public class SmallclassServiceImpl implements SmallclassService {
 	SmallclassDao smallclassDao = new SmallclassDaoImpl();
 
 	@Override
-	public boolean add(String name) {
-		if (smallclassDao.add(name) == 1) {
+	public boolean add(String name,int bigid) {
+		if (smallclassDao.add(name,bigid) == 1) {
 			return true;
 		} else {
 			return false;

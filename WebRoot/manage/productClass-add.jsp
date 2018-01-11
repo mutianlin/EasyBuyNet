@@ -46,7 +46,7 @@
 	<div class="main">
 		<h2>添加分类</h2>
 		<div class="manage">
-			<form action="adminServlet?type=productClassAdd">
+			<form method="post" action="adminServlet?type=productClassAddDo">
 				<table class="form">
 					<tr>
 						<td class="field">父分类：</td>

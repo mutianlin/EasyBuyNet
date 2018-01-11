@@ -10,10 +10,11 @@ import com.eleven.util.DbUtil;
 
 public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 	@Override
-	public int add(String name) {
-		String sql = "INSERT INTO smallclass(s_name) VALUES(?)";
+	public int add(String name,int bigid) {
+		String sql = "INSERT INTO smallclass(s_name,sb_id) VALUES(?,?)";
 		List<Object> list = new ArrayList<Object>();
 		list.add(name);
+		list.add(bigid);
 		return DbUtil.executeUpdate(sql, list);
 	}
 

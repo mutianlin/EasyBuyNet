@@ -76,7 +76,7 @@ a:hover, a:active { color:#3a52a8; text-decoration:underline; }
 #register form table td { padding:10px 0; }
 #register form table td.field { width:150px; text-align:right; font-size:14px; }
 #register form table td input.text { border-left:1px solid #686868; border-top:1px solid #686868; border-bottom:1px solid #b6b6b6; border-right:1px solid #b6b6b6; padding:3px 4px; width:200px; }
-#register form table td input.verycode { width:120px; }
+///////#register form table td input.verycode { width:120px; }
 #register form table td #veryCode { vertical-align:middle; width:70px; height:23px; margin-left:10px; }
 #register form table td span { display:none; vertical-align:middle; margin-left:10px; padding-left:22px; padding-right:10px; background:url(../images/bg.png) -232px -63px no-repeat; }
 #register form table td span.error { display:inline-block; border:1px solid #ff835a; background-color:#ffe8e0; }
@@ -198,3 +198,6 @@ ul.product li dl dd.price { color:#c30; font-weight:bold; }
 #menu-mng dl dd{ margin:5px auto; }
 #menu-mng dl dd a { display:block; }
 #menu-mng em { float:right; padding:0 5px; font-style:normal; }
+
+.code {background-image: url(code.jpg);font-family: Arial;font-style: italic;color: Red;border: 0;padding: 2px 3px;letter-spacing: 3px;font-weight: bolder;}
+.unchanged {border: 0;}

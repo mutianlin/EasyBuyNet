@@ -31,11 +31,12 @@
 							<tr>
 								<td class="field">验证码：</td>
 								<td>
-									<input class="text verycode" type="text" name="veryCode" onfocus="FocusItem(this)" onblur="CheckItem(this);" />
-									<img id="veryCode" src="validataCode" onclick="this.src+='?'+Math.floor(Math.random()*10);" alt="点击刷新" />
+									<input class="text" type="text" name="veryCode" onfocus="FocusItem(this)" onblur="CheckItem(this);" />
+									<!-- <img id="veryCode" src="validataCode" onclick="this.src+='?'+Math.floor(Math.random()*10);" alt="点击刷新" /> -->
 									<span></span>
 								</td>
 							</tr>
+							<tr><td></td><td><div id="v_container" style=" width: 200px;height: 30px;"></div></td></tr>
 							<tr>
 								<td></td>
 								<td>
@@ -51,5 +52,16 @@
 			<div class="clear"></div>
 		</div>
 		<div id="footer">Copyright &copy; 2010 All Rights Reserved.</div>
+		<script>
+        
+        /* document.getElementById("my_button").onclick = function(){
+            var res = verifyCode.validate(document.getElementById("code_input").value);
+            if(res){
+                alert("验证正确");
+            }else{
+                alert("验证码错误");
+            }
+        } */
+    </script>
 </body>
 </html>

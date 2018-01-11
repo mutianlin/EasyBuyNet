@@ -20,6 +20,11 @@
     <servlet-name>ValidataCode</servlet-name>
     <servlet-class>com.eleven.web.ValidataCode</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>com.eleven.web.Delete</servlet-class>
+  </servlet>
+
 
 
 <session-config>
@@ -44,6 +49,10 @@
   <servlet-mapping>
     <servlet-name>ValidataCode</servlet-name>
     <url-pattern>/validataCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/delete</url-pattern>
   </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
