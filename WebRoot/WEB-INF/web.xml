@@ -12,26 +12,27 @@
 		<servlet-name>GoodsServlet</servlet-name>
 		<servlet-class>com.eleven.web.GoodsServlet</servlet-class>
 	</servlet>
-  <servlet>
-    <servlet-name>AdminServlet</servlet-name>
-    <servlet-class>com.eleven.web.AdminServlet</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ValidataCode</servlet-name>
-    <servlet-class>com.eleven.web.ValidataCode</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>Delete</servlet-name>
-    <servlet-class>com.eleven.web.Delete</servlet-class>
-  </servlet>
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>com.eleven.web.AdminServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ValidataCode</servlet-name>
+		<servlet-class>com.eleven.web.ValidataCode</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.eleven.web.Delete</servlet-class>
+	</servlet>
 
 
 
-<session-config>
-	<session-timeout>
-		10<!-- 分钟 -->
-	</session-timeout>
-</session-config>
+
+	<session-config>
+		<session-timeout>
+			10<!-- 分钟 -->
+		</session-timeout>
+	</session-config>
 
 
 	<servlet-mapping>
@@ -42,18 +43,59 @@
 		<servlet-name>GoodsServlet</servlet-name>
 		<url-pattern>/goodsServlet</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>AdminServlet</servlet-name>
-    <url-pattern>/adminServlet</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ValidataCode</servlet-name>
-    <url-pattern>/validataCode</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>Delete</servlet-name>
-    <url-pattern>/delete</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/adminServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ValidataCode</servlet-name>
+		<url-pattern>/validataCode</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<filter>
+		<!-- 声明过滤器 -->
+		<filter-name>CharactorFilter</filter-name>
+		<!-- 过滤器名称 -->
+		<filter-class>com.eleven.web.CharactorFilter</filter-class>
+		<!-- 过滤器的完整类名 -->
+		<init-param>
+			<!-- 初始化参数 -->
+			<param-name>encoding</param-name>
+			<!-- 参数名 -->
+			<param-value>UTF-8</param-value>
+			<!-- 参数值 -->
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<!-- 过滤器映射 -->
+		<filter-name>CharactorFilter</filter-name>
+		<!-- 过滤器名称 -->
+		<url-pattern>/*</url-pattern>
+		<!-- URL映射 -->
+	</filter-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

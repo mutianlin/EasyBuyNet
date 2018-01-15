@@ -10,7 +10,7 @@ import com.eleven.util.DbUtil;
 
 public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 	@Override
-	public int add(String name,int bigid) {
+	public int add(String name, int bigid) {
 		String sql = "INSERT INTO smallclass(s_name,sb_id) VALUES(?,?)";
 		List<Object> list = new ArrayList<Object>();
 		list.add(name);
@@ -30,7 +30,7 @@ public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 	public List<Smallclass> selectAll() {
 		String sql = "select * from smallclass";
 		List<Object> list = new ArrayList<Object>();
-//		System.out.println("Smallclass see");
+		// System.out.println("Smallclass see");
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
@@ -38,7 +38,7 @@ public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 	public List<Smallclass> value(ResultSet rs) {
 		List<Smallclass> l = new ArrayList<Smallclass>();
 		try {
-			while(rs.next()){
+			while (rs.next()) {
 				Smallclass s = new Smallclass();
 				s.setS_id(rs.getInt("s_id"));
 				s.setS_name(rs.getString("s_name"));
@@ -49,5 +49,21 @@ public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 			e.printStackTrace();
 		}
 		return l;
+	}
+
+	@Override
+	public int queryByBId(int id) {
+		String sql = "select sb_id from smallclass where sb_id = ? ";
+		List<Object> list = new ArrayList<Object>();
+		list.add(id);
+		ResultSet rs = DbUtil.executeQuery(sql, list);
+		try {
+			rs.last();// 移动到最后
+			return rs.getRow();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("com.eleven.dao.impl.SmallclassDaoImpl queryByBId(int id) 获取ResultSet长度错误");
+		return 0;
 	}
 }

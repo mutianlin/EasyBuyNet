@@ -23,8 +23,8 @@ public class GoodsServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+//		request.setCharacterEncoding("UTF-8");
+//		response.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		GoodsService gs = new GoodsServiceImpl();
 		BuycarService bs = new BuycarServiceImpl();

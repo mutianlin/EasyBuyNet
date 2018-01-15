@@ -35,4 +35,9 @@ public class SmallclassServiceImpl implements SmallclassService {
 		return smallclassDao.selectAll();
 	}
 
+	@Override
+	public int queryByBId(int id) {
+		return smallclassDao.queryByBId(id);
+	}
+
 }

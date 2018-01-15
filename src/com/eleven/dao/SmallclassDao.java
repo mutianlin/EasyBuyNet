@@ -10,4 +10,5 @@ public interface SmallclassDao {
 	public int delete(String name);
 	public List<Smallclass> selectAll();
 	public List<Smallclass> value(ResultSet rs);
+	public int queryByBId(int id);
 }

@@ -12,6 +12,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理 - 易买网</title>
 <link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="scripts/jquery.js"></script>
 <script type="text/javascript" src="scripts/function-manage.js"></script>
 </head>
 <body>
@@ -59,7 +60,7 @@
 							<td class="first w4 c">${b.b_id }</td>
 							<td>${b.b_name }</td>
 							<td class="w1 c"><a href="productClass-modify.jsp">修改</a> <a
-								href="javascript:Delete(1);">删除</a></td>
+								href="javascript:Delete('bClassD',${b.b_id });">删除</a></td>
 						</tr>
 						<c:forEach items="${slist}" var="s">
 							<c:if test="${s.sb_id == b.b_id }">
@@ -67,7 +68,7 @@
 									<td class="first w4 c">${s.s_id }</td>
 									<td class="childClass">${s.s_name }</td>
 									<td class="w1 c"><a href="productClass-modify.jsp">修改</a>
-										<a href="javascript:Delete(1);">删除</a></td>
+										<a href="javascript:Delete('sClassD',${s.s_id });">删除</a></td>
 								</tr>
 							</c:if>
 						</c:forEach>

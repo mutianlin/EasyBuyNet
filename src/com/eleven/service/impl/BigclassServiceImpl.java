@@ -35,4 +35,12 @@ public class BigclassServiceImpl implements BigclassService {
 		return bigclassdao.selectAll();
 	}
 
+	@Override
+	public boolean delete(int id) {
+		if (bigclassdao.delete(id) == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

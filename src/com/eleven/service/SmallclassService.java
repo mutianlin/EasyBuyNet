@@ -8,4 +8,5 @@ public interface SmallclassService {
 	public boolean add(String name,int bigid);
 	public boolean delete(String name);
 	public List<Smallclass> selectAll();
+	public int queryByBId(int id);
 }

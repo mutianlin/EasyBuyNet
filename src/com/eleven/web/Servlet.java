@@ -30,8 +30,8 @@ public class Servlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");//编码统一
-		response.setCharacterEncoding("UTF-8");
+//		request.setCharacterEncoding("UTF-8");//编码统一
+//		response.setCharacterEncoding("UTF-8");
 		UserService us = new UserServiceImpl();
 		String type = request.getParameter("type");
 		System.out.println("\ntype="+type);//测试

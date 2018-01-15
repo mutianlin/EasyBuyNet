@@ -26,8 +26,8 @@ public class AdminServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setCharacterEncoding("utf-8");
+//		request.setCharacterEncoding("utf-8");
+//		response.setCharacterEncoding("utf-8");
 		String type = request.getParameter("type");
 		if ("userDelete".equals(type)) {// 删除操作
 			int id = Integer.valueOf(request.getParameter("deleteById"));
