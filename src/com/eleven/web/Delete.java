@@ -35,7 +35,7 @@ public class Delete extends HttpServlet {
 			System.out.println(1);
 			if (number > 0) {
 				System.out.println(number+"1111111111");
-				out.write(number);//jquery success ajax servlet 返回数据
+				out.write(number);//jquery success ajax servlet 返回数据 ;jquery success参数传递 ajax
 				System.out.println(3);
 				out.close();
 			}else{
