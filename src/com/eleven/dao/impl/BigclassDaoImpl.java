@@ -54,8 +54,10 @@ public class BigclassDaoImpl implements com.eleven.dao.BigclassDao{
 
 	@Override
 	public int delete(int id) {
-		String sql = "DELETE FROM bigclass WHERE b_id=?";
+		String sql = "DELETE FROM smallclass WHERE sb_id=?;" +
+				"DELETE FROM bigclass WHERE b_id=?";
 		List<Object> list = new ArrayList<Object>();
+		list.add(id);
 		list.add(id);
 		return DbUtil.executeUpdate(sql, list);
 	}

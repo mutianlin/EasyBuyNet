@@ -24,23 +24,26 @@ public class Delete extends HttpServlet {
 			throws ServletException, IOException {
 		// request.setCharacterEncoding("UTF-8");//编码统一
 		// response.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
+		PrintWriter out = response.getWriter();// 定义返回给ajax的对象
 		BigclassService bigclassService = new BigclassServiceImpl();
 		SmallclassService smallclassService = new SmallclassServiceImpl();
+		int id = Integer.valueOf(request.getParameter("deleteDataId"));
 		String deleteType = request.getParameter("deleteType");
 		System.out.println(deleteType);
 		if ("bClassD".equals(deleteType)) {
-			int id = Integer.valueOf(request.getParameter("deleteDataId"));
 			int number = smallclassService.queryByBId(id);
-			System.out.println(1);
 			if (number > 0) {
-				System.out.println(number+"1111111111");
-				out.write(number);//jquery success ajax servlet 返回数据 ;jquery success参数传递 ajax
-				System.out.println(3);
+				out.print(number);
+				out.flush();
 				out.close();
-			}else{
+			} else {
 				bigclassService.delete(id);
 			}
+		}
+
+		if ("doBClassD".equals(deleteType)) {
+			bigclassService.delete(id);
+			response.sendRedirect("adminServlet?type=productClass");
 		}
 	}
 }
