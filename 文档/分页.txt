@@ -1,0 +1,3 @@
+写两个静态类，一个user一个goods。
+使用PageUtil.java获取四项属性。
+增删user和goods时重新执行获取方法，获取四项属性

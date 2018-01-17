@@ -1,5 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common/common.jsp"%>
+<%@ include file="common/loginAregister.jsp"%>
 <body>
 	<%@ include file="common/head.jsp"%>
 	<div id="register" class="wrap">

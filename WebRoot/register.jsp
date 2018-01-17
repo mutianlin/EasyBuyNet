@@ -1,5 +1,5 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common/common.jsp"%>
+<%@ include file="common/loginAregister.jsp"%>
 <body>
 	<%@ include file="common/head.jsp"%>
 	<div id="register" class="wrap">
@@ -38,7 +38,7 @@
 						</tr>
 						<tr>
 							<td class="field">验证码：</td>
-							<td><input class="text verycode" type="text" name="veryCode"
+							<td><input class="text" type="text" name="veryCode"
 								onfocus="FocusItem(this)" onblur="CheckItem(this);" />
 								<!-- <img id="veryCode" src="validataCode" onclick="this.src+='?'+Math.floor(Math.random()*10);" alt="点击刷新" /> -->
 								<span></span>
