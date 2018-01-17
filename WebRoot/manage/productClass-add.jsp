@@ -61,7 +61,7 @@
 					</tr>
 					<tr>
 						<td class="field">分类名称：</td>
-						<td><input type="text" class="text" name="className" value="电脑" /></td>
+						<td><input type="text" class="text" name="className" value="" /></td>
 					</tr>
 					<tr>
 						<td></td>

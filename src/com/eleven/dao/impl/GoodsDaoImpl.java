@@ -112,4 +112,20 @@ public class GoodsDaoImpl implements com.eleven.dao.GoodsDao {
 		return value(DbUtil.executeQuery(sql, list));
 	}
 
+	@Override
+	public int queryByBGs_id(int id) {
+		String sql = "select g_id from goods where gs_id = ? ";
+		List<Object> list = new ArrayList<Object>();
+		list.add(id);
+		ResultSet rs = DbUtil.executeQuery(sql, list);
+		try {
+			rs.last();// 移动到最后
+			return rs.getRow();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("com.eleven.dao.impl.GoodsDaoImpl queryByBId(int id) 获取ResultSet长度错误");
+		return 0;
+	}
+
 }

@@ -28,7 +28,7 @@ public class BigclassDaoImpl implements com.eleven.dao.BigclassDao{
 
 	@Override
 	public List<Bigclass> selectAll() {
-		String sql = "select * from bigclass";
+		String sql = "select * from bigclass ORDER BY b_id";
 		List<Object> list = new ArrayList<Object>();
 //		System.out.println("Bigclass see");
 		return value(DbUtil.executeQuery(sql, list));
@@ -54,11 +54,11 @@ public class BigclassDaoImpl implements com.eleven.dao.BigclassDao{
 
 	@Override
 	public int delete(int id) {
-		String sql = "DELETE FROM smallclass WHERE sb_id=?;" +
-				"DELETE FROM bigclass WHERE b_id=?";
 		List<Object> list = new ArrayList<Object>();
+		String sql = "DELETE FROM smallclass WHERE sb_id=?;";
 		list.add(id);
-		list.add(id);
+		DbUtil.executeUpdate(sql, list);
+		sql = "DELETE FROM bigclass WHERE b_id=?";
 		return DbUtil.executeUpdate(sql, list);
 	}
 

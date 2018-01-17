@@ -40,4 +40,13 @@ public class SmallclassServiceImpl implements SmallclassService {
 		return smallclassDao.queryByBId(id);
 	}
 
+	@Override
+	public boolean delete(int id) {
+		if (smallclassDao.delete(id) == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

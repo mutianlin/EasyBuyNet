@@ -128,7 +128,7 @@ public class AdminServlet extends HttpServlet {
 				SmallclassService smallclassService = new SmallclassServiceImpl();
 				smallclassService.add(className,parentId);
 			}
-			request.getRequestDispatcher("manage/productClass-add.jsp").forward(
+			request.getRequestDispatcher("adminServlet?type=productClassAdd").forward(
 					request, response);
 		} else if ("productClass".equals(type)) {// 分类管理
 			BigclassService bigclassService = new BigclassServiceImpl();

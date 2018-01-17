@@ -15,4 +15,5 @@ public interface GoodsDao {
 	public Goods selectById(int id);
 	public Goods selectByName(String name);
 	List<Goods> value(ResultSet rs);
+	public int queryByBGs_id(int id);
 }

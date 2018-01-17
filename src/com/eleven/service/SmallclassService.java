@@ -9,4 +9,5 @@ public interface SmallclassService {
 	public boolean delete(String name);
 	public List<Smallclass> selectAll();
 	public int queryByBId(int id);
+	public boolean delete(int id);
 }

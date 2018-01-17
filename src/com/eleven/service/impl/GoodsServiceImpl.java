@@ -51,4 +51,9 @@ public class GoodsServiceImpl implements GoodsService {
 		return goodsDao.select(number);
 	}
 
+	@Override
+	public int queryByBGs_id(int id) {
+		return goodsDao.queryByBGs_id(id);
+	}
+
 }

@@ -26,4 +26,6 @@ public interface GoodsService {
 	 * @return
 	 */
 	public List<Goods> selectByDis();
+	
+	public int queryByBGs_id(int id);
 }

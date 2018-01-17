@@ -28,7 +28,7 @@ public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 
 	@Override
 	public List<Smallclass> selectAll() {
-		String sql = "select * from smallclass";
+		String sql = "select * from smallclass ORDER BY s_id";
 		List<Object> list = new ArrayList<Object>();
 		// System.out.println("Smallclass see");
 		return value(DbUtil.executeQuery(sql, list));
@@ -65,5 +65,15 @@ public class SmallclassDaoImpl implements com.eleven.dao.SmallclassDao {
 		}
 		System.out.println("com.eleven.dao.impl.SmallclassDaoImpl queryByBId(int id) 获取ResultSet长度错误");
 		return 0;
+	}
+
+	@Override
+	public int delete(int id) {
+		String sql = "DELETE FROM goods WHERE gs_id=?";
+		List<Object> list = new ArrayList<Object>();
+		list.add(id);
+		DbUtil.executeUpdate(sql, list);
+		sql = "DELETE FROM smallclass WHERE s_id=?";
+		return DbUtil.executeUpdate(sql, list);
 	}
 }
