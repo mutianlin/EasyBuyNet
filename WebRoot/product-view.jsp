@@ -26,8 +26,15 @@
 					<p>库 存：有货</p>
 					<p>库 存：有货</p>
 					<div class="button">
-						<input type="button" name="button" value="" onclick="goBuy(${goods.g_id})" /><a
-							href="#">放入购物车</a>
+						<input type="button" name="button" value="" onclick="goBuy(${goods.g_id})" />
+						<c:choose>
+			<c:when test="${empty user }">
+				<a href="login.jsp">放入购物车</a>
+			</c:when>
+			<c:otherwise>
+				<a href="goodsServlet?type=addBuycar&user=${user.id}&goods=${goods.g_id}">放入购物车</a>
+			</c:otherwise>
+		</c:choose>
 					</div>
 				</div>
 				<div class="clear"></div>

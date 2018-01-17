@@ -16,7 +16,7 @@
 					<input type="hidden" name="buycarId" value="${b.c_id}">
 					<tr id="product_id_${b.c_id}">
 						<td class="thumb">
-						<img src="images/product/${b.g_id}.jpg" width="54px" height="54px" />
+						<img src="${b.g_bpic}" width="54px" height="54px" />
 						<a href="goodsServlet?type=goods&id=${b.g_id}">${b.c_name}</a>
 						</td>
 						<td class="price" id="price_id_${b.c_id}"><span>￥${b.c_money}</span>

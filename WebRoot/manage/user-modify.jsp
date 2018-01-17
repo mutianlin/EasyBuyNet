@@ -95,12 +95,11 @@
 								<%
 								Object u = request.getAttribute("updateUser");
 								User user = (User) u;
-								
 								String birth1 = user.getBirth();
 								if(birth1!=null){
 								String[] birth = birth1.split("\\.");
-								System.out.println(birth1+"\n"+birth.length);
-								System.out.println(birth[0]+birth[1]+birth[2]);
+								System.out.println(birth1+"\n"+birth.length);//测试
+								System.out.println(birth[0]+birth[1]+birth[2]);//测试
 								if(birth.length==3){
 								%>
 								var y = $("#byear > [value='<%=birth[0] %>']");
@@ -112,7 +111,7 @@
 								var m = $("#bmonth > [value='12']");
 								var d = $("#bday > [value='12']");
 								<%}%>
-								alert(y.selected);
+								//alert(y.selected);
 								console.log(y);
 								console.log(m);
 								console.log(d);

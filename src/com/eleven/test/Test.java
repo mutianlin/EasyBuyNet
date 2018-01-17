@@ -4,6 +4,10 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Scanner;
 
+import com.eleven.dao.impl.BuycarDaoImpl;
+import com.eleven.entity.Goods;
+import com.eleven.service.impl.GoodsServiceImpl;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -21,6 +25,15 @@ public class Test {
 			System.out.println(d);
 			String c = URLDecoder.decode(b,"utf-8");
 			System.out.println(c);
+//			
+//			GoodsServiceImpl gs = new GoodsServiceImpl();
+//			BuycarDaoImpl bs = new BuycarDaoImpl();
+//			
+//			Goods g = gs.selectById(8);
+//			bs.addGoods(1, g);
+//			
+//			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

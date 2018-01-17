@@ -9,6 +9,7 @@ public class Buycar {
 	private int c_count;
 	private String c_desc;
 	private double c_money;
+	private String g_bpic;
 
 	public int getC_id() {
 		return c_id;
@@ -24,6 +25,14 @@ public class Buycar {
 
 	public void setG_id(int g_id) {
 		this.g_id = g_id;
+	}
+	
+	public String getG_bpic() {
+		return g_bpic;
+	}
+
+	public void setG_bpic(String g_bpic) {
+		this.g_bpic = g_bpic;
 	}
 
 	public int getU_id() {

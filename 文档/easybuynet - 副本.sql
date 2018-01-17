@@ -1,22 +1,22 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : root
-Source Server Version : 50717
+Source Server         : 127.0.0.1
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : easybuynet
 
 Target Server Type    : MYSQL
-Target Server Version : 50717
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-03 11:13:15
+Date: 2018-01-17 16:29:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for admin
+-- Table structure for `admin`
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -35,7 +35,7 @@ INSERT INTO `admin` VALUES ('2', 'ywk', '123');
 INSERT INTO `admin` VALUES ('3', 'cxf', '123');
 
 -- ----------------------------
--- Table structure for bigclass
+-- Table structure for `bigclass`
 -- ----------------------------
 DROP TABLE IF EXISTS `bigclass`;
 CREATE TABLE `bigclass` (
@@ -48,18 +48,19 @@ CREATE TABLE `bigclass` (
 -- ----------------------------
 -- Records of bigclass
 -- ----------------------------
-INSERT INTO `bigclass` VALUES ('1', '1');
 INSERT INTO `bigclass` VALUES ('2', '2');
 INSERT INTO `bigclass` VALUES ('3', '3');
 INSERT INTO `bigclass` VALUES ('4', '4');
+INSERT INTO `bigclass` VALUES ('1', '测试');
 
 -- ----------------------------
--- Table structure for buycar
+-- Table structure for `buycar`
 -- ----------------------------
 DROP TABLE IF EXISTS `buycar`;
 CREATE TABLE `buycar` (
   `c_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `u_id` int(11) NOT NULL COMMENT '用户id',
+  `g_id` int(11) NOT NULL,
   `c_name` varchar(20) DEFAULT NULL COMMENT '所购商品名称',
   `c_price` double(11,2) DEFAULT NULL COMMENT '所购商品价格',
   `c_count` int(11) DEFAULT NULL COMMENT '所购商品数量',
@@ -70,15 +71,15 @@ CREATE TABLE `buycar` (
   KEY `c_name` (`c_name`),
   CONSTRAINT `buycar_ibfk_1` FOREIGN KEY (`u_id`) REFERENCES `user` (`id`),
   CONSTRAINT `buycar_ibfk_2` FOREIGN KEY (`c_name`) REFERENCES `goods` (`g_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='购物车';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of buycar
 -- ----------------------------
-INSERT INTO `buycar` VALUES ('1', '3', '10', '50.00', '3', null, '150.00');
+INSERT INTO `buycar` VALUES ('1', '3', '2', '10', '50.00', '3', null, '150.00');
 
 -- ----------------------------
--- Table structure for goods
+-- Table structure for `goods`
 -- ----------------------------
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
@@ -108,19 +109,19 @@ CREATE TABLE `goods` (
 -- ----------------------------
 -- Records of goods
 -- ----------------------------
-INSERT INTO `goods` VALUES ('2', '10', '1', '1', null, null, null, null, null, null, null, '200', '50.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('3', '法国德菲丝松露精品巧克力500g/盒', '1', '1', null, null, null, null, null, null, null, '200000', '108.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('4', '乐扣普通型保鲜盒圣诞7件套', '1', '1', null, null, null, null, null, null, null, '300000', '69.90', '1.00', '1');
-INSERT INTO `goods` VALUES ('5', '欧珀莱均衡保湿四件套', '1', '1', null, null, null, null, null, null, null, '123', '279.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('6', '联想笔记本电脑 高速独立显存', '1', '1', null, null, null, null, null, null, null, '132', '4199.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('7', '法姿韩版显瘦彩边时尚牛仔铅笔裤', '1', '1', null, null, null, null, null, null, null, '123', '49.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('8', 'Genius925纯银施华洛世奇水晶吊坠', '1', '1', null, null, null, null, null, null, null, '123', '69.90', '1.00', '1');
-INSERT INTO `goods` VALUES ('9', '利仁2018M福满堂电饼铛 好用实惠', '1', '1', null, null, null, null, null, null, null, '123', '268.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('10', '达派高档拉杆箱20寸 经典款式', '1', '1', '', null, null, null, null, null, null, '123', '198.00', '1.00', '1');
-INSERT INTO `goods` VALUES ('11', '爱国者MP4 全屏触摸多格式播放 4G', '1', '1', null, null, null, null, null, null, null, '123', '289.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('2', '10', '1', '1', 'images/product/2.jpg', null, null, null, null, null, null, '200', '50.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('3', '法国德菲丝松露精品巧克力500g/盒', '1', '1', 'images/product/3.jpg', null, null, null, null, null, null, '200000', '108.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('4', '乐扣普通型保鲜盒圣诞7件套', '1', '1', 'images/product/4.jpg', null, null, null, null, null, null, '300000', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('5', '欧珀莱均衡保湿四件套', '1', '1', 'images/product/5.jpg', null, null, null, null, null, null, '123', '279.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('6', '联想笔记本电脑 高速独立显存', '1', '1', 'images/product/6.jpg', null, null, null, null, null, null, '132', '4199.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('7', '法姿韩版显瘦彩边时尚牛仔铅笔裤', '1', '1', 'images/product/7.jpg', null, null, null, null, null, null, '123', '49.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('8', 'Genius925纯银施华洛世奇水晶吊坠', '1', '1', 'images/product/8.jpg', null, null, null, null, null, null, '123', '69.90', '1.00', '1');
+INSERT INTO `goods` VALUES ('9', '利仁2018M福满堂电饼铛 好用实惠', '1', '1', 'images/product/9.jpg', null, null, null, null, null, null, '123', '268.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('10', '达派高档拉杆箱20寸 经典款式', '1', '1', 'images/product/10.jpg', null, null, null, null, null, null, '123', '198.00', '1.00', '1');
+INSERT INTO `goods` VALUES ('11', '爱国者MP4 全屏触摸多格式播放 4G', '1', '1', 'images/product/11.jpg', null, null, null, null, null, null, '123', '289.00', '1.00', '1');
 
 -- ----------------------------
--- Table structure for indent
+-- Table structure for `indent`
 -- ----------------------------
 DROP TABLE IF EXISTS `indent`;
 CREATE TABLE `indent` (
@@ -146,7 +147,7 @@ CREATE TABLE `indent` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for notice
+-- Table structure for `notice`
 -- ----------------------------
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
@@ -161,7 +162,7 @@ CREATE TABLE `notice` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for smallclass
+-- Table structure for `smallclass`
 -- ----------------------------
 DROP TABLE IF EXISTS `smallclass`;
 CREATE TABLE `smallclass` (
@@ -176,7 +177,7 @@ CREATE TABLE `smallclass` (
 -- ----------------------------
 -- Records of smallclass
 -- ----------------------------
-INSERT INTO `smallclass` VALUES ('1', '1.1', '1');
+INSERT INTO `smallclass` VALUES ('1', '测试', '1');
 INSERT INTO `smallclass` VALUES ('2', '1.2', '1');
 INSERT INTO `smallclass` VALUES ('3', '1.3', '1');
 INSERT INTO `smallclass` VALUES ('4', '2.1', '2');
@@ -190,7 +191,7 @@ INSERT INTO `smallclass` VALUES ('11', '4.2', '4');
 INSERT INTO `smallclass` VALUES ('12', '4.3', '4');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -207,13 +208,18 @@ CREATE TABLE `user` (
   `likes` varchar(50) DEFAULT NULL COMMENT '爱好',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'test', 'test', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('3', '123', '123', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '', null, null, null, null, null, null);
-INSERT INTO `user` VALUES ('5', 'q', 'q', '', '', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('1', 'test', 'test', '请问', '女', '1998.10.4', null, null, '请问', '请问', null);
+INSERT INTO `user` VALUES ('2', '穆天麟', 'mtl', '穆天麟', '男', '1998.10.4', null, null, null, null, null);
+INSERT INTO `user` VALUES ('3', '123', '123', '', '女', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('4', 'ssh', 'ssh', '', '女', '1998.10.4', null, null, null, null, null);
+INSERT INTO `user` VALUES ('5', 'q', '?', '?', '?', '1998.10.4', null, null, '?', '?', null);
+INSERT INTO `user` VALUES ('6', '王明清', 'wmq', '王明清', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('7', '张凯', 'zk', '张凯', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('8', '吕文翔', 'lwx', '吕文翔', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('9', '崔永鑫', 'cyx', '崔永鑫', '男', null, null, null, null, null, null);
+INSERT INTO `user` VALUES ('10', '杜习港', 'dxg', '杜习港', '男', null, null, null, null, null, null);

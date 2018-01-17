@@ -66,9 +66,6 @@ public class Servlet extends HttpServlet {
 			BigclassService bigclassService = new BigclassServiceImpl();
 			GoodsService goodsService = new GoodsServiceImpl();
 			List<Goods> glist = goodsService.select(8);
-//			for(Goods g : glist){//显示解码后名字。但是el表达式貌似又转了一下码
-//				System.out.println(g.getG_nameToUTF8());
-//			}
 			request.setAttribute("glist", glist);//商品存入request
 			List<Goods> Hglist = goodsService.select(12);
 			request.setAttribute("Hglist", Hglist);//商品存入request

@@ -11,5 +11,5 @@ public interface BuycarDao {
 
 	public int addGoods(int userId,Goods g);
 
-	public List<Buycar> value(ResultSet rs);
+	public List<Buycar> value(ResultSet rs1);
 }

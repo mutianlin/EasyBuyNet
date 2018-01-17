@@ -8,8 +8,8 @@
 			<div class="box">
 				<h1>欢迎注册易买网</h1>
 				<ul class="steps clearfix">
-					<li class="current"><em></em>填写注册信息</li>
-					<li class="last"><em></em>注册成功</li>
+					<li class="current"><em></em>填写信息</li>
+					<li class="last"><em></em>操作成功</li>
 				</ul>
 				<form id="regForm" method="post" action="servlet"
 					onsubmit="return checkForm(this);">

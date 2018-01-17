@@ -114,7 +114,7 @@
 							<dl>
 								<dt>
 									<a href="goodsServlet?type=goods&id=${g.g_id}"
-										target="_blank"><img src="images/product/${g.g_id}.jpg" />
+										target="_blank"><img src="${g.g_bpic}" />
 									</a>
 								</dt>
 								<dd class="title">

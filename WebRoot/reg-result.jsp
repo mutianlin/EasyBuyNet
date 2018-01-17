@@ -9,8 +9,8 @@
 		<div class="box">
 			<h1>欢迎</h1>
 			<ul class="steps clearfix">
-				<li class="finished"><em></em>填写注册信息</li>
-				<li class="last-current"><em></em>注册成功</li>
+				<li class="finished"><em></em>填写信息</li>
+				<li class="last-current"><em></em>操作成功</li>
 			</ul>
 			<div class="msg">
 				<p>恭喜：成功！</p>
